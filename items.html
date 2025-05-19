@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="assets/css/common.css">
+        <link rel="stylesheet" href="assets/css/items.css">
+        <script src="assets/java/items.js"></script>
+        <script src="assets/java/common.js"></script>
+        <link rel="icon" type="image/png" href="assets/img/favIcon.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+        <title>Items Gallery</title>
+    </head>
+    <body>
+
+    <!-- Pagina di caricamento (spinner) -->
+    <div class="loading-screen">
+        <div class="spinner"></div>
+    </div>
+
+        <!-- Elemento che si sovrappone a tutti -->
+        <div id="opaque-page"></div>
+        <!------------------------------------------->
+        <div id="page-container">
+            <div id="main-container">
+                
+                <div id="navbar">
+                    <div class="rom-navbar">
+                        <div id="logo-box"><a class="logo" href="index.html" title="Home"></a></div>
+                        <div class="navbar-body">
+                            <div class="nav-link-box">
+                                <a class="nav-link" href="narratives.html">Narratives</a>
+                                <span class="underline"></span>
+                            </div>
+                            <div class="nav-link-box">
+                                <a class="nav-link" href="items.html">Items</a>
+                                <span class="underline"></span>
+                            </div>
+                            <div class="nav-link-box">
+                                <a class="nav-link" href="timeline.html">Timeline</a>
+                                <span class="underline"></span>
+                            </div>
+                            <div class="nav-link-box">
+                                <a class="nav-link" href="map.html">Map</a>
+                                <span class="underline"></span>
+                            </div>
+                            <div class="nav-link-box">
+                                <a class="nav-link" href="about.html">About us</a>
+                                <span class="underline"></span>
+                            </div>
+                        </div>
+                        <!-- Hamburger Menu -->
+                        <div class="menu" id="menu-button">
+                            <button id="toggleButton" onclick="toggleCurtain()" class="toggle-btn">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="menu" id="menu-links">
+                        <a href="narratives.html">Narratives</a>
+                        <a href="items.html">Items</a>
+                        <a href="timeline.html">Timeline</a>
+                        <a href="map.html">Map</a>
+                        <a href="about.html">About us</a>
+                    </div>
+                    <!------- Hamburger Menu End --------->
+                </div>
+                <!------ Navbar End ---------->
+                
+                <!-------------- Gallery start ---------------->
+
+                <div id="gallery"> 
+
+                    <!--================= PRIMA RIGA ===================-->
+                    <div id="search-space" class="hidden-animation-center">
+                        <div id="search-bar">
+                            <div class="search-div" id="narratives-space">
+                                <div class="narrative">
+                                    <div class="label">Theme:</div>
+                                    <div class="select">
+                                        <div class="selected-box">
+                                            <div class="selected" data-name="Themes" data-value=""></div>
+                                            <div class="arrow-down"></div>                                
+                                            <div class="toggle-options"></div>
+                                        </div>
+                                        <div class="options" id="Themes">
+                                            <div class="option" data-value="">All</div>
+                                            <div class="option" data-value="Ethics of war">Ethics of war</div>
+                                            <div class="option" data-value="Scientific revolution">Scientific revolution</div>
+                                            <div class="option" data-value="Women's history">Women's history</div>
+                                            <div class="option" data-value="Religious dissent">Religious dissent</div>
+                                            <div class="option" data-value="Provocative art">Provocative art</div>
+                                            <div class="option" data-value="Digital privacy">Digital privacy</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="narrative">
+                                    <div class="label">Typology:</div>
+                                    <div class="select">
+                                        <div class="selected-box">
+                                            <div class="selected" data-name="Typology" data-value=""></div>
+                                            <div class="arrow-down"></div>
+                                            <div class="toggle-options"></div>
+                                        </div>
+                                        <div class="options" id="Typology">
+                                            <div class="option" data-value="">All</div>
+                                            <div class="option" data-value="Text">Text</div>
+                                            <div class="option" data-value="Tool">Tool</div>
+                                            <div class="option" data-value="Artwork">Artwork</div>
+                                            <div class="option" data-value="Garment">Garment</div>
+                                            <div class="option" data-value="Event">Event</div>
+                                            <div class="option" data-value="Weapon">Weapon</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="narrative">
+                                    <div class="label">Period:</div>
+                                    <div class="select">
+                                        <div class="selected-box">
+                                            <div class="selected" data-name="Historical period" data-value=""></div>
+                                            <div class="arrow-down"></div>
+                                            <div class="toggle-options"></div>
+                                        </div>
+                                        <div class="options" id="Historical period">
+                                            <div class="option" data-value="">All</div>
+                                            <div class="option" data-value="XV-XVII Century">15th-17th Century</div>
+                                            <div class="option" data-value="XVIII-XIX Century">18th-19th Century</div>
+                                            <div class="option" data-value="First half of XX Century">1st half 20th Century</div>
+                                            <div class="option" data-value="Second half of XX Century">2nd half 20th Century</div>
+                                            <div class="option" data-value="XXI Century">21st Century</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="search-div" id="searchButton-space">
+                                <button class="button filter" onclick="combinedNarratives()">
+                                    <img src="assets/img/icons/filter.png" alt="Filter Icon" class="filter-icon">Filter</button>
+                                <div id="results"></div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                <!--================= SECONDA RIGA ===================-->    
+                <div class="space-between"></div>
+
+                    <!--================= TERZA RIGA ===================-->
+                    <div id="item-space">
+                        <div id="details-space" class="hidden-animation-left">
+                            <h3 id="title-header">Title</h3>
+                            <h4 class="data-header"></h4>
+                            <table id="details">
+                                <tbody id="infoTable"></tbody>
+                            </table>
+                        </div>
+                        <div id="img-space" class="hidden-animation-right">
+                            <div id="switchPanel">
+                                <div id="arrowSection">
+                                    <div class="switch" id="left">
+                                        <input class="switchButton" id="leftButton" type="image" src="assets/img/flowArrow.svg" alt="Previous item" onclick="switchItem(-1)"/>
+                                    </div>
+                                    <div class="switch" id="right">
+                                        <input class="switchButton" id="rightButton" type="image" src="assets/img/flowArrow.svg" alt="Next item" onclick="switchItem(1)"/>
+                                    </div>
+                                </div>
+                                <div id="indexSection">
+                                    <div id="indicesBox"></div>
+                                </div>
+                            </div>
+                            <div class="image-box">
+                                <img id="img" src="" alt="image">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--================= QUARTA RIGA ===================-->
+                    <div class="space-between2"></div>
+
+                    <!--================= QUINTA RIGA ===================-->
+                    <div id="description">
+                        <hr id="divider" class="divider-line">  <!-- Riga prima del padding -->
+                        <h4 class="data-header">Description</h4>
+                        <div id="shortInfo"></div>
+                        <div class="hidden" id="longerInfo"></div>
+                        <div class="hidden" id="fullInfo">
+                            <div id="fullInfoContent"></div>
+                        </div>
+                        <div id="readButtons">
+                            <button class="desc-button" id="lessBtn" onclick="less()" disabled>Less</button>
+                            <button class="desc-button" id="moreBtn" onclick="more()">More</button>
+                        </div>
+                    </div>
+
+                </div>
+                <!-------------- Gallery end ---------------->
+            </div>
+            <footer class="footer">
+                <!-- Copyright -->
+                <p>&#169; 2024 Copyright: <a href="#">Forbidden Curiosities</a></p>
+                <p><i>This is the final project for the course <a href="https://www.unibo.it/it/studiare/dottorati-master-specializzazioni-e-altra-formazione/insegnamenti/insegnamento/2023/454464" target="_blank">Information Modelling and Web Technologies</a>, taught by Professor Fabio Vitali at the University of Bologna during the 2023/2024 academic year, as part of the Master's program in <a href="https://corsi.unibo.it/2cycle/DigitalHumanitiesKnowledge" target="_blank">Digital Humanities and Digital Knowledge</a>.</i></p>
+                <p>Read the full documentation of the project <a href="doc.html" target="_blank">here</a>.</p>
+                <div class="footer-icon">
+                    <a href="https://github.com/Asemica-me/Forbidden-Curiosities" target="_blank" title="GitHub">
+                        <img src="assets/img/icons/git.svg" alt="GitHub Icon">
+                    </a>
+                </div>              
+            </footer>
+        </div>
+        </div>
+    </body>
+</html>

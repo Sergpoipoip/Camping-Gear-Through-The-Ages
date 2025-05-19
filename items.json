@@ -1,0 +1,334 @@
+{
+	"meta": {
+		"startWith": 0,
+		"startNarrative": "Historical Period",
+		"startValue": "XV-XVII Century",
+		"narratives": ["Typology", "Themes", "Historical Period"]
+	},
+	"items": [
+		{
+			"@sort": "1",
+			"shortName": "Ishango Bone",
+			"image": "imgs/items/ishangoBone.jpeg",
+			"info": {
+				"Title": "Ishango Bone",
+                "Object type": "Bone tool (possible mathematical device)",
+                "Materials": "Bone",
+				"Creator": "-",
+				"icon": "-",
+				"Production Date": "c. 18000 - 20000 BCE",
+                "Housed in": "Royal Belgian Institute of Royal Sciences, Brussels, Belgia",
+				"Original Location": "Ishango, DR Congo, Africa",
+				"Findspot": "Excavated/Findspot: Virunga National Park, near the town of Goma, DR Congo",
+				"Subjects": "-" 
+			},
+			"shortInfo": "Ice‑Age tally stick offering one of humanity’s earliest numeric records.", 
+			"longerInfo": ["A 20 000‑year‑old bone from DR Congo whose three neat columns of notches are widely read as arithmetic tallies, showing that symbolic counting—and the mental step toward writing—predated agriculture and cities by millennia."],
+			"fullInfo": "items_descriptions/ishangoBone.html"
+		},
+		{
+			"@sort": "2",
+			"shortName": "The Gilgamesh Tablet",
+			"image": "imgs/items/GilgameshTablet.jpg",
+			"info": {
+				"Title": "The Gilgamesh Tablet",
+                "Object type": "Tablet",
+                "Materials": "Clay",
+				"Creator": "-",
+				"icon": "-",
+				"Production Date": "7thC BC",
+                "Housed in": "The British Museum, London, United Kingdom",
+				"Original Location": "",
+				"Findspot": "Excavated/Findspot: Kouyunjik. Asia: Middle East: Iraq: Iraq, North: Kouyunjik",
+				"Subjects": "Mesopotamian myth/legend" 
+			},
+			"shortInfo": "The single most famous cuneiform text that caused a sensation when its content was first read in the 19th century", 
+			"longerInfo": ["This artifact is the most renowned cuneiform inscription ever discovered. Its translation in the 19th century sparked great excitement due to its striking parallels with the biblical Flood narrative in Genesis. The tablet, made of baked clay, bears the Babylonian version of the Great Flood story."],
+			"fullInfo": "items_descriptions/gilgamesh.html"
+		},
+		{
+			"@sort": "3",
+			"shortName": "Uruk Beer Rations Tablet",
+			"image": "imgs/items/urukTablet.jpg",
+			"info": {
+				"Title": "Uruk Beer Rations Tablet",
+                "Object type": "Tablet",
+                "Materials": "Clay",
+				"Creator": "-",
+				"icon": "-",
+				"Production Date": "c. 3300 BC",
+                "Housed in": "The British Museum, London, United Kingdom",
+				"Original Location": "Uruk, Sumer, Mesopotomia",
+				"Findspot": "-",
+				"Subjects": "-" 
+			},
+			"shortInfo": "One of the earliest known written tablets, inscribed with pictographs, showing workers paid in beer.", 
+			"longerInfo": ["This late‑Uruk tablet (c. 3300 BCE) records daily beer rations with jar and head pictograms plus wedge numerals, making it one of the oldest datable texts and proof that economic accounting drove the invention of writing."],
+			"fullInfo": "items_descriptions/uruk.html"
+		},
+		{
+			"@sort": "4",
+			"shortName": "Palermo Stone",
+			"image": "imgs/items/PalermoStone.jpg",
+			"info": {
+				"Title": "Palermo Stone",
+                "Object type": "Stele fragment",
+                "Materials": "Black basalt",
+                "Creator": "Fifth Dynasty scribes",
+				"icon": "-",
+                "Production Date": "c. 2338 BC",
+                "Housed in": "Regional Archaeological Museum Antonio Salinas, Palermo, Italy",
+				"Original Location": "Likely Memphis or Heliopolis",
+				"Findspot": "Unknown",
+				"Subjects": "Ancient Egyptian royal annals" 
+				
+		},
+			"shortInfo": "Discover the Palermo Stone, one of the oldest surviving historical records from ancient Egypt, offering a rare glimpse into the reigns and rituals of Egypt’s earliest kings.", 
+			"longerInfo": ["This fragment of black basalt is part of a larger royal annals stele, meticulously documenting the reigns, ceremonies, and Nile flood levels of Egypt’s Old Kingdom rulers. As one of the earliest surviving historical documents, the Palermo Stone represents a critical shift from simple record-keeping to formalized historiography, showcasing how ancient Egyptians developed systematic methods to archive their past"],
+			"fullInfo": "items_descriptions/palermoStone.html"
+		},
+		{
+			"@sort": "5",
+			"shortName": "Oracle Bone Inscriptions",
+			"image": "imgs/items/oracleBones.jpeg",
+			"info": {
+				"Title": "Oracle Bone Inscriptions",
+				"Object type": "Divinatory inscriptions",
+                "Materials": "Ox scapulae, turtle plastrons",
+                "Creator": "Shang Dynasty scribes and diviners",
+				"icon": "-",
+                "Production Date": "c. 1250–1050 BC",
+                "Housed in": "National Museum of China, Beijing, China",
+				"Original Location": "Yinxu (modern Anyang, Henan), the Shang capital",
+				"Findspot": "Yinxu",
+				"Subjects": "Divination records, royal rituals"
+				
+		},
+			"shortInfo": "Explore the earliest attested form of Chinese writing, inscribed on ox scapulae and turtle plastrons for divination during the late Shang dynasty.", 
+			"longerInfo": ["Oracle bone inscriptions, known in Chinese as Jiaguwen, constitute the oldest corpus of Chinese writing, dating to the late second millennium BCE and carved onto animal bones and turtle shells for divinatory practices. These inscriptions record the Shang royal court’s questions to ancestors and deities on topics ranging from weather and agriculture to war and hunting, offering invaluable insights into early Chinese language, ritual, and governance."],
+			"fullInfo": "items_descriptions/oracleBones.html"
+		},
+		{
+			"@sort": "6",
+			"shortName": "Linear B Tablet",
+			"image": "imgs/items/linearBtablet.jpg",
+			"info": {
+				"Title": "Linear B Tablet (PY Ta641)",
+				"Object type": "Tablet",
+                "Materials": "Clay",
+                "Creator": "Senior scribe working for the palatial administration at Pylos",
+				"icon": "-",
+                "Production Date": "c. 1180 BC",
+                "Housed in": "National Archaeological Museum, Athens, Greece",
+				"Original Location": "Mycenae",
+				"Findspot": "Pylos, Messenia",
+				"Subjects": "Rituals"
+				
+		},
+			"shortInfo": "Mycenaean clay slip that clinched the decipherment of Linear B.", 
+			"longerInfo": ["Written c. 1180 BCE at the Palace of Nestor, the tablet lists bronze tripods for a feast; after Ventris’s 1952 breakthrough its syllabic signs matched Greek words, proving that a syllabary could encode an Indo‑European language."],
+			"fullInfo": "items_descriptions/linearB.html"
+		},
+		{
+			"@sort": "7",
+			"shortName": "Ahiram Sarcophagus",
+			"image": "imgs/items/Ahiram.jpg",
+			"info": {
+				"Title": "Phoenician Alphabet Inscription",
+				"Object type": "Sarcophagus",
+                "Materials": "Limestone",
+                "Creator": "-",
+				"icon": "-",
+                "Production Date": "c. 1000 BC",
+                "Housed in": "National Museum of Beirut, Lebanon",
+				"Original Location": "Byblos (Levant, Phoenicia)",
+				"Findspot": "Byblos (Levant, Phoenicia)",
+				"Subjects": "Rituals, burials"
+				
+		},
+			"shortInfo": "Limestone coffin with the earliest fully alphabetic Phoenician text.", 
+			"longerInfo": ["The 10th‑century BCE epitaph on King Ahiram’s sarcophagus shows 19 letters of the Phoenician consonantal alphabet, ancestor of Greek, Latin and Arabic scripts, exemplifying how the alphabetic principle simplified writing worldwide."],
+			"fullInfo": "items_descriptions/ahiram.html"
+		},
+		{
+			"@sort": "8",
+			"shortName": "Rosetta Stone",
+			"image": "imgs/items/rosettaStone.jpg",
+			"info": {
+				"Title": "Rosetta Stone",
+				"Object type": "Stela",
+                "Materials": "Granodiorite",
+                "Creator": "Priests of Memphis in the reign of Ptolemy V",
+				"icon": "-",
+                "Production Date": "196 BC",
+                "Housed in": "The British Museum, London, United Kingdom",
+				"Original Location": "Temple complex near Sais, western Nile Delta, Egypt",
+				"Findspot": "Fort St Julien, el-Rashid (Rosetta), Egypt",
+				"Subjects": "Royal decree, priestly privileges, taxation reforms, cult of Ptolemy V"
+			},
+			"shortInfo": "Explore the tri‑script granodiorite stele whose Greek, Demotic, and hieroglyphic texts provided the crucial key to deciphering ancient Egyptian writing.",
+			"longerInfo": ["Because scholars could already read Greek, the parallel texts let Thomas Young and, decisively in 1822, Jean‑François Champollion crack the phonetic system hidden in hieroglyphs — launching modern Egyptology and turning “Rosetta Stone” into a metaphor for any breakthrough decipherment in the history of writing."],
+			"fullInfo": "items_descriptions/rosettaStone.html"
+		},
+		{
+			"@sort": "9",
+			"shortName": "Derveni Papyrus",
+			"image": "imgs/items/derveni.jpg",
+			"info": {
+				"Title": "Derveni Papyrus",
+				"Object type": "Papyrus roll",
+				"Materials": "Carbonised papyrus",
+				"Creator": "-",
+				"icon": "-",
+				"Production Date": "196 BC",
+				"Housed in": "Archaeological Museum of Thessaloniki, Greece",
+				"Original Location": "Thessaloniki, Greece",
+				"Findspot": "Tomb A, Derveni necropolis, near Thessaloniki, Greece",
+				"Subjects": "Philosophical treatise" 		
+			},
+			"shortInfo": "Europe’s oldest surviving ‘book’—a charred Greek papyrus scroll saved from a 4th‑century BCE tomb.",
+			"longerInfo": ["Found in 1962 near Thessaloniki, the Derveni Papyrus preserves 26 columns of commentary on an Orphic poem, making it the earliest physical witness to Greek philosophical exegesis and proof that papyrus books circulated well beyond Egypt."],
+			"fullInfo": "items_descriptions/derveni.html"
+		},
+		{
+			"@sort": "10",
+			"shortName": "Codex Sinaiticus",
+			"image": "imgs/items/codex-sinaiticus.jpg",
+			"info": {
+				"Title": "Codex Sinaiticus (“Sinai Book”)",
+				"Object type": "Book",
+				"Materials": "Thin parchment/vellum",
+				"Creator": "-",
+				"icon": "-",
+				"Production Date": "c. 330 - 360 CE",
+				"Housed in": "347 leaves, British Library, London; 43 leaves, Leipzig University Library, Germany; 6 leaves, National Library of Russia, St Petersburg; 18 leaves & fragments, St Catherine’s Monastery, Sinai, Egypt",
+				"Original Location": "St Catherine’s Monastery, Sinai, Egypt",
+				"Findspot": "St Catherine’s Monastery, Sinai, Egypt",
+				"Subjects": "Septuagint Old Testament (substantial but incomplete), complete New Testament" 		
+			},
+			"shortInfo": "The earliest nearly complete Bible—an enormous 4th‑century parchment codex that still holds the oldest full Greek New Testament.",
+			"longerInfo": ["Copied c. 350 CE and rediscovered at Sinai in 1844, Codex Sinaiticus shows how early Christians harnessed the new codex format to bind an entire Bible, and its meticulously corrected text underpins every modern critical edition."],
+			"fullInfo": "items_descriptions/codex-sinaiticus.html"
+		},
+		{
+			"@sort": "11",
+			"shortName": "Diamond Sutra",
+			"image": "imgs/items/sutra.jpg",
+			"info": {
+				"Title": "Diamond Sutra (Dunhuang scroll)",
+				"Object type": "Book",
+				"Materials": "Handmade paper",
+				"Creator": "-",
+				"icon": "-",
+				"Production Date": "868 CE",
+				"Housed in": "British Library, London, United Kingdom",
+				"Original Location": "Dunghuang, China",
+				"Findspot": "Dunghuang, China",
+				"Subjects": "-" 		
+			},
+			"shortInfo": "Learn about world’s earliest dated printed book, produced by woodblock in 868 CE.",
+			"longerInfo": ["Explore the 5‑metre scroll from Dunhuang, commissioned ‘for universal free distribution’, proves Tang‑dynasty mastery of woodblock printing centuries before movable type and shows how mass reproduction spread Buddhist texts and literacy."],
+			"fullInfo": "items_descriptions/sutra.html"
+		},
+		{
+			"@sort": "12",
+			"shortName": "Jikji",
+			"image": "imgs/items/jikji.jpg",
+			"info": {
+				"Title": "Jikji",
+				"Object type": "Book",
+				"Materials": "Paper",
+				"Creator": "-",
+				"icon": "-",
+				"Production Date": "1377 CE",
+				"Housed in": "National Library of France, Paris",
+				"Original Location": "Cheongju, South Korea",
+				"Findspot": "Cheongju, South Corea",
+				"Subjects": "-" 		
+			},
+			"shortInfo": "This is the oldest extant book printed with movable metal type (Korea, 1377)",
+			"longerInfo": ["The Zen Buddhist anthology *Jikji* predates Gutenberg by 78 years and attests to sophisticated cast‑metal type in Goryeo Korea, revealing an independent East‑Asian invention of movable‑type printing for religious scholarship."],
+			"fullInfo": "items_descriptions/jikji.html"
+		},
+		{
+			"@sort": "13",
+			"shortName": "Gutenberg Bible",
+			"image": "imgs/items/gutenberg.jpg",
+			"info": {
+				"Title": "Gutenberg Bible",
+				"Object type": "Book",
+				"Materials": "Paper",
+				"Creator": "Johannes Gutenberg",
+				"icon": "-",
+				"Production Date": "1377 CE",
+				"Housed in": "e.g. Bibliothèque nationale de France, British Library",
+				"Original Location": "Mainz, Holy Roman Empire, Germany",
+				"Findspot": "-",
+				"Subjects": "-" 		
+			},
+			"shortInfo": "First mass‑produced European book using metal movable type.",
+			"longerInfo": ["Printed in Mainz c. 1454 – 55, the Latin Bible launched the Gutenberg Revolution, making high‑quality books affordable, accelerating literacy and disseminating ideas that reshaped religion, science and culture."],
+			"fullInfo": "items_descriptions/gutenberg.html"
+		},
+		{
+			"@sort": "14",
+			"shortName": "Remington No. 1",
+			"image": "imgs/items/remington.jpg",
+			"info": {
+				"Title": "Remington No. 1",
+				"Object type": "Desk typewriter",
+				"Materials": "Wood, iron, brass, ceramic",
+				"Creator": "Invented by Christopher L. Sholes & Carlos S. Glidden; manufactured by E. Remington & Sons",
+				"icon": "-",
+				"Production Date": "1873 – 1876 (first sales 1 July 1874)",
+				"Housed in": "Henry Ford Museum of American Innovation, Dearborn MI, USA",
+				"Original Location": "Ilion, New York, USA",
+				"Findspot": "-",
+				"Subjects": "Typewriters, office equipment, QWERTY keyboard;" 		
+			},
+			"shortInfo": "The first commercially successful typewriter—its QWERTY keys launched modern typing.",
+			"longerInfo": ["Introduced by Remington in 1874, the Sholes & Glidden bound letters to levers, letting clerks hammer words faster than any pen and setting the keyboard pattern that still marches across laptops today."],
+			"fullInfo": "items_descriptions/typewriter.html"
+		},
+		{
+			"@sort": "15",
+			"shortName": "Punch Card",
+			"image": "imgs/items/punch.jpg",
+			"info": {
+				"Title": "Punch Card",
+				"Object type": "Card",
+				"Materials": "Stiff paper",
+				"Creator": "Herman Hollerith",
+				"icon": "-",
+				"Production Date": "1887 CE",
+				"Housed in": "National Museum of American History, Washington, USA",
+				"Original Location": "-",
+				"Findspot": "-",
+				"Subjects": "-" 		
+			},
+			"shortInfo": "Explore paper card that turned census answers into machine‑readable bits.",
+			"longerInfo": ["Herman Hollerith’s 1890 punch cards encoded demographic data as hole patterns read electrically, slashing census processing time and becoming the standard data medium for early computing and information storage."],
+			"fullInfo": "items_descriptions/punch.html"
+		},
+		{
+			"@sort": "16",
+			"shortName": "Unicode",
+			"image": "imgs/items/unicode.jpg",
+			"info": {
+				"Title": "The Unicode Standard (Version 1.0)",
+				"Object type": "Technical Standard",
+				"Materials": "-",
+				"Creator": "Unicode Consortium",
+				"icon": "-",
+				"Production Date": "1991 CE",
+				"Housed in": "-",
+				"Original Location": "Mountain View, CA, USA",
+				"Findspot": "-",
+				"Subjects": "-" 		
+			},
+			"shortInfo": "The first universal character codebook—Unicode 1.0 bound 7,129 characters from 24 scripts into two printed volumes.",
+			"longerInfo": ["Issued by the Unicode Consortium in 1991–92, these Addison-Wesley tomes replaced clashing computer code pages with a single 16-bit repertoire, opening the door to seamless digital text in every writing system."],
+			"fullInfo": "items_descriptions/unicode.html"
+		}
+	]
+}
