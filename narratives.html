@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Narratives · Evolution of Writing</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Project‑wide stylesheet (optional) -->
+  <link rel="stylesheet" href="css/common.css">
+</head>
+<body class="bg-light">
+  <!-- Navbar -->
+<nav class="navbar navbar-expand-md navbar-light">
+  <div class="container">
+    <div id="projectTitle" class="d-flex align-items-center gap-2">
+      <img id="logo" src="imgs/favicon-32x32.png" alt="Logo" width="32" height="32">
+      <a class="navbar-brand fw-semibold" href="index.html">
+        <span id="highlight">Evolution</span> of Writing
+      </a>
+    </div>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse navbar-menu" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="narratives.html">Narratives</a></li>
+        <li class="nav-item"><a class="nav-link" href="items.html">Items</a></li>
+        <li class="nav-item"><a class="nav-link" href="timeline.html">Timeline</a></li>
+        <li class="nav-item"><a class="nav-link" href="map.html">Map</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- /Navbar -->
+  <main class="container py-5">
+    <h1 class="mb-5 text-center fw-bold">Narratives of Writing</h1>
+
+    <!-- Narrative selector -->
+    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
+      <div class="col">
+        <button type="button" class="btn btn-primary btn-lg w-100" data-bs-toggle="modal" data-bs-target="#modalCommerce">
+          Commerce &amp; Administration
+        </button>
+      </div>
+      <div class="col">
+        <button type="button" class="btn btn-success btn-lg w-100" data-bs-toggle="modal" data-bs-target="#modalGovernance">
+          Governance &amp; Law
+        </button>
+      </div>
+      <div class="col">
+        <button type="button" class="btn btn-danger btn-lg w-100" data-bs-toggle="modal" data-bs-target="#modalPhilosophy">
+          Philosophy &amp; Literature
+        </button>
+      </div>
+      <div class="col">
+        <button type="button" class="btn btn-warning btn-lg w-100" data-bs-toggle="modal" data-bs-target="#modalReligion">
+          Religion &amp; Myth
+        </button>
+      </div>
+      <div class="col">
+        <button type="button" class="btn btn-info btn-lg text-white w-100" data-bs-toggle="modal" data-bs-target="#modalTechnology">
+          Technology &amp; Communication
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!--====================  MODALS  ====================-->
+
+  <!-- Commerce & Administration -->
+  <div class="modal fade" id="modalCommerce" tabindex="-1" aria-labelledby="commerceLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-4" id="commerceLabel">Commerce &amp; Administration</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>For as long as merchants bartered grain for silver, writing kept the ledger balanced. Cuneiform tablets from Uruk recorded shipments, debts and taxes, giving birth to the bureaucratic state. From papyrus invoices issued by Roman tax‑collectors to the double‑entry books of Florentine banks, administrative writing turned abstract numbers into public trust. Seals, signatures and stamped marks authenticated agreements across distance, making markets possible. Today spreadsheets and bar‑codes inherit this bookkeeping DNA, but the essential idea is unchanged: by freezing a transaction in ink, writing lets commerce outlive the moment and scale far beyond the memory of any trader.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-primary" onclick="explore('Commerce & Administration')">Explore Artefacts</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Governance & Law -->
+  <div class="modal fade" id="modalGovernance" tabindex="-1" aria-labelledby="governanceLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-4" id="governanceLabel">Governance &amp; Law</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Power needs memory. When Hammurabi carved his code in basalt, orators became less important than readers. Written decrees fix a ruler’s will, but they also bind that ruler to precedent that citizens can quote back. Charters, constitutions and parliamentary minutes create an audit trail that legitimises authority through transparency. In medieval Europe, scribes recorded fealty oaths; in modern states, printed ballots and gazettes enact policy. Whether stamped in clay or uploaded as open data, these texts turn governance into a conversation across generations, allowing laws to be challenged, amended or defended long after their authors have left the throne.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-success" onclick="explore('Governance & Law')">Explore Artefacts</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Philosophy & Literature -->
+  <div class="modal fade" id="modalPhilosophy" tabindex="-1" aria-labelledby="philosophyLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-4" id="philosophyLabel">Philosophy &amp; Literature</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Ideas are fragile until they find a page. Writing frees thought from the breath, letting Socrates argue in classrooms he never saw and novels carry emotions over centuries. Scrolls in Alexandria linked intellects across empires; Gutenberg’s press multiplied literacy and with it dissent. Essays, poetry and drama refine language itself, sharpening logic and empathy in equal measure. Annotation, translation and commentary weave an ever‑thickening web of dialogue that makes self‑critique possible. By storing imagination outside the mind, writing turns individual insight into a collaborative, cumulative project—philosophy and literature as an endless, borderless conversation.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-danger" onclick="explore('Philosophy & Literature')">Explore Artefacts</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Religion & Myth -->
+  <div class="modal fade" id="modalReligion" tabindex="-1" aria-labelledby="religionLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-4" id="religionLabel">Religion &amp; Myth</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Before theology had universities, it had tablets, scrolls and codices. Writing fixed oral myths into canons, transforming fluid stories into scriptures that could cross kingdoms intact. Hymns in hieroglyphs, Sanskrit sutras and illuminated Qur’ans all seek to preserve revelation against the erosion of time. Sacred texts regulate ritual, but they also enable exegesis—layers of commentary that keep belief alive by arguing over it. Pilgrims carry talismans inscribed with verses; printing presses spark reformations by flooding streets with affordable Bibles. Even in the digital age, hashtags quote sutras. Writing lets the divine travel farther than any priest’s voice could reach.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-warning" onclick="explore('Religion & Myth')">Explore Artefacts</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Technology & Communication -->
+  <div class="modal fade" id="modalTechnology" tabindex="-1" aria-labelledby="technologyLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-4" id="technologyLabel">Technology &amp; Communication</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Every medium of writing reshapes the message. Styluses on wet clay demanded brevity; typewriters standardised spelling; smartphones compress poetry into tweets. As surfaces evolved—from birch bark to blockchain—the speed, reach and permanence of written communication exploded. Telegraph cables turned letters into near‑instant code; e‑mail blurred private memo and public broadcast; cloud documents allow whole teams to revise a sentence simultaneously. Each innovation challenges authorship and privacy while expanding collaboration. From punch cards steering looms to markup languages instructing browsers, writing doubles as software, directing machines as well as minds. Technology doesn’t just deliver texts—it becomes their grammar.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-info text-white" onclick="explore('Technology & Communication')">Explore Artefacts</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--====================  SCRIPTS  ====================-->
+  <script>
+    const chosen = new URL(location).searchParams.get('narrative') || sessionStorage.getItem('narrative');
+    /**
+     * Store the selected narrative in sessionStorage *and* add it as a URL query parameter,
+     * so the items page can pick it up whichever method it prefers.
+     * @param {string} topic  The narrative label exactly as it appears in the JSON dataset.
+     */
+    function explore(topic) {
+      // Keep a copy in session storage (simple for same‑origin pages)
+      sessionStorage.setItem('narrative', topic);
+      // Also pass it via URL for direct linking / bookmarking
+      const encoded = encodeURIComponent(topic);
+      window.location.href = `items.html?narrative=${encoded}`;
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
