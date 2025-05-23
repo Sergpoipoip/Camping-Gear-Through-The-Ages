@@ -1,12 +1,12 @@
-/*  js/items.js  --------------------------------------------------------- */
-// Builds the gallery, supports filter dropdowns, lazy‑loads “Full story” HTML, and
-// (new) starts with a narrative pre‑selected if provided either via
-// ?narrative=… query string or sessionStorage.narrative.
-
+/*  js/items.js  ---------------------------------------------------------
+   Builds the gallery, supports filter dropdowns, lazy-loads “Full story”
+   HTML, and starts with either a narrative or a typology pre-selected
+   (picked up from ?narrative=… / ?typology=… or sessionStorage).
+*/
 (() => {
   /* ---------- State & DOM ---------- */
-  let items = [];
-  let filtered = [];
+  let items     = [];
+  let filtered  = [];
 
   const themeSel    = document.getElementById('filterTheme');
   const typologySel = document.getElementById('filterTypology');
@@ -21,14 +21,14 @@
   const btnLonger = document.getElementById('btnShowLonger');
   const btnFull   = document.getElementById('btnShowFull');
 
-  /* ---------- Get initial narrative, if any ---------- */
-  const params          = new URLSearchParams(location.search);
-  const startNarrative  = params.get('narrative') || sessionStorage.getItem('narrative') || '';
-  
-  if (startNarrative) {
-    // clear the storage copy so navigating back doesn’t refilter unexpectedly
-    sessionStorage.removeItem('narrative');
-  }
+  /* ---------- Query-string / sessionStorage ---------- */
+  const params         = new URLSearchParams(location.search);
+  const startNarrative = params.get('narrative') || sessionStorage.getItem('narrative') || '';
+  const preTypology    = params.get('typology')  || sessionStorage.getItem('typology')  || '';
+
+  // clean out session copies so back-navigation doesn’t re-apply filters
+  sessionStorage.removeItem('narrative');
+  sessionStorage.removeItem('typology');
 
   /* ---------- Load dataset ---------- */
   fetch('items.json')
@@ -36,9 +36,6 @@
     .then(data => {
       items = (data.items || []).sort((a, b) => +a['@sort'] - +b['@sort']);
       buildFilters();
-      if (startNarrative && [...themeSel.options].some(o => o.value === startNarrative)) {
-        themeSel.value = startNarrative;
-      }
       renderGrid();
     })
     .catch(err => {
@@ -58,6 +55,15 @@
     addOpts(typologySel, it => it.info?.['Object type'] || '');
     addOpts(periodSel,   it => it.periodTag             || '');
 
+    /* --- pre-select narrative / typology if provided ------------------ */
+    if (startNarrative && [...themeSel.options].some(o => o.value === startNarrative)) {
+      themeSel.value = startNarrative;
+    }
+    if (preTypology && [...typologySel.options].some(o => o.value === preTypology.trim())) {
+      typologySel.value = preTypology.trim();
+    }
+
+    /* --- event listeners --------------------------------------------- */
     [themeSel, typologySel, periodSel].forEach(sel =>
       sel.addEventListener('change', renderGrid));
   }
@@ -76,7 +82,9 @@
       return okTheme && okTypology && okPeriod;
     });
 
-    grid.innerHTML = filtered.length ? '' : '<p class="text-center text-muted">No items match your filters.</p>';
+    grid.innerHTML = filtered.length
+      ? ''
+      : '<p class="text-center text-muted">No items match your filters.</p>';
 
     filtered.forEach(it => {
       grid.insertAdjacentHTML('beforeend', `
@@ -86,7 +94,9 @@
             <div class="card-body d-flex flex-column">
               <h5 class="card-title">${it.shortName}</h5>
               <p class="card-text small flex-grow-1">${it.shortInfo}</p>
-              <button class="btn btn-primary mt-2 details-btn" data-id="${it['@sort']}">Details</button>
+              <button class="btn btn-primary mt-2 details-btn" data-id="${it['@sort']}">
+                Details
+              </button>
             </div>
           </div>
         </div>`);
@@ -117,7 +127,7 @@
         tbody.insertAdjacentHTML('beforeend', `<tr><th class="text-nowrap w-25">${k}</th><td>${v}</td></tr>`));
     }
 
-    // longer info (already in JSON as array of paragraphs)
+    // longer info (array of paragraphs)
     if (Array.isArray(it.longerInfo) && it.longerInfo.length) {
       longerDiv.innerHTML = it.longerInfo.map(p => `<p>${p}</p>`).join('');
       btnLonger.style.display = 'inline-block';
@@ -127,14 +137,14 @@
     }
     longerDiv.classList.remove('show');
 
-    // full story – lazy‑load from external HTML once, on first expand
+    // full story – lazy-load from external HTML once, on first expand
     if (it.fullInfo) {
-      fullDiv.dataset.url = it.fullInfo;
+      fullDiv.dataset.url    = it.fullInfo;
       fullDiv.dataset.loaded = 'false';
-      btnFull.style.display = 'inline-block';
+      btnFull.style.display  = 'inline-block';
     } else {
-      fullDiv.dataset.url = '';
-      btnFull.style.display = 'none';
+      fullDiv.dataset.url    = '';
+      btnFull.style.display  = 'none';
     }
     fullDiv.innerHTML = '';
     fullDiv.classList.remove('show');
@@ -166,4 +176,3 @@
       document.getElementById(id).classList.remove('show'));
   });
 })();
-

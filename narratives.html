@@ -7,12 +7,13 @@
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  
-  <!-- Project‑wide stylesheet (optional) -->
+  <!-- Project-wide stylesheet (optional) -->
   <link rel="stylesheet" href="css/common.css">
 </head>
+
 <body class="bg-light">
-  <!-- Navbar -->
+
+<!-- Navbar -->
 <nav class="navbar navbar-expand-md navbar-light">
   <div class="container">
     <div id="projectTitle" class="d-flex align-items-center gap-2">
@@ -40,148 +41,370 @@
   </div>
 </nav>
 <!-- /Navbar -->
-  <main class="container py-5">
-    <h1 class="mb-5 text-center fw-bold">Narratives of Writing</h1>
 
-    <!-- Narrative selector -->
-    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
-      <div class="col">
-        <button type="button" class="btn btn-primary btn-lg w-100" data-bs-toggle="modal" data-bs-target="#modalCommerce">
-          Commerce &amp; Administration
-        </button>
-      </div>
-      <div class="col">
-        <button type="button" class="btn btn-success btn-lg w-100" data-bs-toggle="modal" data-bs-target="#modalGovernance">
-          Governance &amp; Law
-        </button>
-      </div>
-      <div class="col">
-        <button type="button" class="btn btn-danger btn-lg w-100" data-bs-toggle="modal" data-bs-target="#modalPhilosophy">
-          Philosophy &amp; Literature
-        </button>
-      </div>
-      <div class="col">
-        <button type="button" class="btn btn-warning btn-lg w-100" data-bs-toggle="modal" data-bs-target="#modalReligion">
-          Religion &amp; Myth
-        </button>
-      </div>
-      <div class="col">
-        <button type="button" class="btn btn-info btn-lg text-white w-100" data-bs-toggle="modal" data-bs-target="#modalTechnology">
-          Technology &amp; Communication
-        </button>
-      </div>
+<main class="container py-5">
+  <h1 class="mb-5 text-center fw-bold">Narratives of Writing</h1>
+
+  <!-- =====  THEME NARRATIVES  ================================= -->
+  <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
+    <div class="col">
+      <button class="btn btn-primary btn-lg w-100" data-bs-toggle="modal" data-bs-target="#modalCommerce">
+        Commerce &amp; Administration
+      </button>
     </div>
-  </main>
-
-  <!--====================  MODALS  ====================-->
-
-  <!-- Commerce & Administration -->
-  <div class="modal fade" id="modalCommerce" tabindex="-1" aria-labelledby="commerceLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2 class="modal-title fs-4" id="commerceLabel">Commerce &amp; Administration</h2>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p>For as long as merchants bartered grain for silver, writing kept the ledger balanced. Cuneiform tablets from Uruk recorded shipments, debts and taxes, giving birth to the bureaucratic state. From papyrus invoices issued by Roman tax‑collectors to the double‑entry books of Florentine banks, administrative writing turned abstract numbers into public trust. Seals, signatures and stamped marks authenticated agreements across distance, making markets possible. Today spreadsheets and bar‑codes inherit this bookkeeping DNA, but the essential idea is unchanged: by freezing a transaction in ink, writing lets commerce outlive the moment and scale far beyond the memory of any trader.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-outline-primary" onclick="explore('Commerce & Administration')">Explore Artefacts</button>
-        </div>
-      </div>
+    <div class="col">
+      <button class="btn btn-success btn-lg w-100" data-bs-toggle="modal" data-bs-target="#modalGovernance">
+        Governance &amp; Law
+      </button>
+    </div>
+    <div class="col">
+      <button class="btn btn-danger btn-lg w-100" data-bs-toggle="modal" data-bs-target="#modalPhilosophy">
+        Philosophy &amp; Literature
+      </button>
+    </div>
+    <div class="col">
+      <button class="btn btn-warning btn-lg w-100" data-bs-toggle="modal" data-bs-target="#modalReligion">
+        Religion &amp; Myth
+      </button>
+    </div>
+    <div class="col">
+      <button class="btn btn-info btn-lg text-white w-100" data-bs-toggle="modal" data-bs-target="#modalTechnology">
+        Technology &amp; Communication
+      </button>
     </div>
   </div>
 
-  <!-- Governance & Law -->
-  <div class="modal fade" id="modalGovernance" tabindex="-1" aria-labelledby="governanceLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2 class="modal-title fs-4" id="governanceLabel">Governance &amp; Law</h2>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p>Power needs memory. When Hammurabi carved his code in basalt, orators became less important than readers. Written decrees fix a ruler’s will, but they also bind that ruler to precedent that citizens can quote back. Charters, constitutions and parliamentary minutes create an audit trail that legitimises authority through transparency. In medieval Europe, scribes recorded fealty oaths; in modern states, printed ballots and gazettes enact policy. Whether stamped in clay or uploaded as open data, these texts turn governance into a conversation across generations, allowing laws to be challenged, amended or defended long after their authors have left the throne.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-outline-success" onclick="explore('Governance & Law')">Explore Artefacts</button>
-        </div>
+  <!-- =====  OBJECT-TYPE NARRATIVES  ============================ -->
+  <h2 class="mt-5 mb-4 text-center fw-bold">Object-type&nbsp; Narratives</h2>
+
+  <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-5">
+    <div class="col">
+      <button class="btn btn-primary btn-lg w-100" data-bs-toggle="modal" data-bs-target="#modalCounting">
+        Counting&nbsp;tool
+      </button>
+    </div>
+    <div class="col">
+      <button class="btn btn-success btn-lg w-100" data-bs-toggle="modal" data-bs-target="#modalDevice">
+        Device / Standard
+      </button>
+    </div>
+    <div class="col">
+      <button class="btn btn-danger btn-lg w-100" data-bs-toggle="modal" data-bs-target="#modalManuscript">
+        Manuscript / Book
+      </button>
+    </div>
+    <div class="col">
+      <button class="btn btn-warning btn-lg w-100" data-bs-toggle="modal" data-bs-target="#modalStone">
+        Stone / Monument
+      </button>
+    </div>
+    <div class="col">
+      <button class="btn btn-info btn-lg text-white w-100" data-bs-toggle="modal" data-bs-target="#modalTablet">
+        Tablet
+      </button>
+    </div>
+  </div>
+</main>
+
+<!-- ====================  MODALS : HISTORICAL NARRATIVES  ==================== -->
+<!-- Commerce & Administration -->
+<div class="modal fade" id="modalCommerce" tabindex="-1" aria-labelledby="commerceLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title fs-4" id="commerceLabel">Commerce &amp; Administration</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>From clay tokens to bar-codes, writing fixed bargains in durable symbols. Ledgers and receipts let trade scale beyond memory, while seals and signatures guaranteed trust across distance, giving birth to economic bureaucracy.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-primary"
+                onclick="exploreNarrative('Commerce & Administration')">Explore artefacts</button>
       </div>
     </div>
   </div>
+</div>
 
-  <!-- Philosophy & Literature -->
-  <div class="modal fade" id="modalPhilosophy" tabindex="-1" aria-labelledby="philosophyLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2 class="modal-title fs-4" id="philosophyLabel">Philosophy &amp; Literature</h2>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p>Ideas are fragile until they find a page. Writing frees thought from the breath, letting Socrates argue in classrooms he never saw and novels carry emotions over centuries. Scrolls in Alexandria linked intellects across empires; Gutenberg’s press multiplied literacy and with it dissent. Essays, poetry and drama refine language itself, sharpening logic and empathy in equal measure. Annotation, translation and commentary weave an ever‑thickening web of dialogue that makes self‑critique possible. By storing imagination outside the mind, writing turns individual insight into a collaborative, cumulative project—philosophy and literature as an endless, borderless conversation.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-outline-danger" onclick="explore('Philosophy & Literature')">Explore Artefacts</button>
-        </div>
+<!-- Governance & Law -->
+<div class="modal fade" id="modalGovernance" tabindex="-1" aria-labelledby="governanceLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title fs-4" id="governanceLabel">Governance &amp; Law</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Edicts carved in stone or printed in gazettes turn power into a public contract. Written charters, minutes and ballots make authority legible—and contestable—across space and generations.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-success"
+                onclick="exploreNarrative('Governance & Law')">Explore artefacts</button>
       </div>
     </div>
   </div>
+</div>
 
-  <!-- Religion & Myth -->
-  <div class="modal fade" id="modalReligion" tabindex="-1" aria-labelledby="religionLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2 class="modal-title fs-4" id="religionLabel">Religion &amp; Myth</h2>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p>Before theology had universities, it had tablets, scrolls and codices. Writing fixed oral myths into canons, transforming fluid stories into scriptures that could cross kingdoms intact. Hymns in hieroglyphs, Sanskrit sutras and illuminated Qur’ans all seek to preserve revelation against the erosion of time. Sacred texts regulate ritual, but they also enable exegesis—layers of commentary that keep belief alive by arguing over it. Pilgrims carry talismans inscribed with verses; printing presses spark reformations by flooding streets with affordable Bibles. Even in the digital age, hashtags quote sutras. Writing lets the divine travel farther than any priest’s voice could reach.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-outline-warning" onclick="explore('Religion & Myth')">Explore Artefacts</button>
-        </div>
+<!-- Philosophy & Literature -->
+<div class="modal fade" id="modalPhilosophy" tabindex="-1" aria-labelledby="philosophyLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title fs-4" id="philosophyLabel">Philosophy &amp; Literature</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Writing frees ideas from the breath, letting dialogues, poems and epics travel millennia. Margins host new voices; presses multiply readership. Thought becomes a borderless collaboration stitched together by texts.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-danger"
+                onclick="exploreNarrative('Philosophy & Literature')">Explore artefacts</button>
       </div>
     </div>
   </div>
+</div>
 
-  <!-- Technology & Communication -->
-  <div class="modal fade" id="modalTechnology" tabindex="-1" aria-labelledby="technologyLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2 class="modal-title fs-4" id="technologyLabel">Technology &amp; Communication</h2>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p>Every medium of writing reshapes the message. Styluses on wet clay demanded brevity; typewriters standardised spelling; smartphones compress poetry into tweets. As surfaces evolved—from birch bark to blockchain—the speed, reach and permanence of written communication exploded. Telegraph cables turned letters into near‑instant code; e‑mail blurred private memo and public broadcast; cloud documents allow whole teams to revise a sentence simultaneously. Each innovation challenges authorship and privacy while expanding collaboration. From punch cards steering looms to markup languages instructing browsers, writing doubles as software, directing machines as well as minds. Technology doesn’t just deliver texts—it becomes their grammar.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-outline-info text-white" onclick="explore('Technology & Communication')">Explore Artefacts</button>
-        </div>
+<!-- Religion & Myth -->
+<div class="modal fade" id="modalReligion" tabindex="-1" aria-labelledby="religionLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title fs-4" id="religionLabel">Religion &amp; Myth</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Scrolls and sutras stabilise the sacred, allowing believers divided by language and era to share ritual words. Commentary traditions keep faith alive by letting each generation write back to revelation.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-warning"
+                onclick="exploreNarrative('Religion & Myth')">Explore artefacts</button>
       </div>
     </div>
   </div>
+</div>
 
-  <!--====================  SCRIPTS  ====================-->
-  <script>
-    const chosen = new URL(location).searchParams.get('narrative') || sessionStorage.getItem('narrative');
-    /**
-     * Store the selected narrative in sessionStorage *and* add it as a URL query parameter,
-     * so the items page can pick it up whichever method it prefers.
-     * @param {string} topic  The narrative label exactly as it appears in the JSON dataset.
-     */
-    function explore(topic) {
-      // Keep a copy in session storage (simple for same‑origin pages)
-      sessionStorage.setItem('narrative', topic);
-      // Also pass it via URL for direct linking / bookmarking
-      const encoded = encodeURIComponent(topic);
-      window.location.href = `items.html?narrative=${encoded}`;
-    }
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Technology & Communication -->
+<div class="modal fade" id="modalTechnology" tabindex="-1" aria-labelledby="technologyLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title fs-4" id="technologyLabel">Technology &amp; Communication</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>From parchment to pixels, every new surface reshapes the speed, reach and collaboration of writing. As code, text now instructs machines as well as minds, fusing medium and message.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-info"
+                onclick="exploreNarrative('Technology & Communication')">Explore artefacts</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====================  MODALS : OBJECT TYPOLOGIES  ==================== -->
+<!-- Counting tool -->
+<div class="modal fade" id="modalCounting" tabindex="-1" aria-labelledby="countingLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title fs-4" id="countingLabel">Counting tool</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Before numerals, tally sticks and carved bones kept score of flocks and debts. These portable counters are writing’s numeric cousins—abstract signs that let quantity travel without the thing itself.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-primary"
+                onclick="exploreTypology('Counting tool')">Explore artefacts</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Device / Standard -->
+<div class="modal fade" id="modalDevice" tabindex="-1" aria-labelledby="deviceLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title fs-4" id="deviceLabel">Device / Standard</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Weights, measures and official seals translate words into authority. Their inscriptions certify authenticity, ensuring that trade and law follow common standards across distance.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-success"
+                onclick="exploreTypology('Device / Standard')">Explore artefacts</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Manuscript / Book -->
+<div class="modal fade" id="modalManuscript" tabindex="-1" aria-labelledby="manuscriptLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title fs-4" id="manuscriptLabel">Manuscript / Book</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Pages bind thought into portable libraries. Illuminated codices, printed quartos and e-books each widen access to knowledge, letting writing escape the scroll and travel in bound volumes of ever-shrinking bulk.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-danger"
+                onclick="exploreTypology('Manuscript / Book')">Explore artefacts</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Stone / Monument -->
+<div class="modal fade" id="modalStone" tabindex="-1" aria-labelledby="stoneLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title fs-4" id="stoneLabel">Stone / Monument</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>From stelae to obelisks, carved rock proclaims deeds meant to outlast the carver. Monumental scripts anchor memory in the landscape, turning territory itself into an archive.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-warning"
+                onclick="exploreTypology('Stone / Monument')">Explore artefacts</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Tablet -->
+<div class="modal fade" id="modalTablet" tabindex="-1" aria-labelledby="tabletLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title fs-4" id="tabletLabel">Tablet</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Whether clay, wax or silicon, the tablet is a palm-sized contract between writer and surface: immediate, erasable and eminently portable. It miniaturises archives for the hand and for the pocket.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-info"
+                onclick="exploreTypology('Tablet')">Explore artefacts</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ==================================================================== -->
+
+<!-- Counting tool -->
+<div class="modal fade" id="modalCounting" tabindex="-1" aria-labelledby="countingLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title fs-4" id="countingLabel">Counting tools</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Notches on bone, beads on string, grooves in clay: before words there were numbers. Counting tools transformed fleeting quantities into permanent marks, letting early societies tax, trade and ration with confidence. By externalising arithmetic, they paved the road from tally stick to spreadsheet.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-dark" onclick="exploreTypology('Counting tool')">Explore&nbsp;artefacts</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Device / Standard -->
+<div class="modal fade" id="modalDevice" tabindex="-1" aria-labelledby="deviceLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title fs-4" id="deviceLabel">Devices &amp; Standards</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>From typewriters to Unicode charts, devices and standards are the machines and rule-books that shape every letter we share. They regularise symbols, speed up production and let distant systems understand one another—the infrastructural backbone of writing.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-dark" onclick="exploreTypology('Device / Standard')">Explore&nbsp;artefacts</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Manuscript / Book -->
+<div class="modal fade" id="modalManuscript" tabindex="-1" aria-labelledby="manuscriptLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title fs-4" id="manuscriptLabel">Manuscripts &amp; Books</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Scrolls, codices and printed volumes turned fragile speech into portable libraries. By binding sheets together they protected texts, encouraged pagination and invited marginalia—technologies that still frame how we cite and think today.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-dark" onclick="exploreTypology('Manuscript / Book')">Explore&nbsp;artefacts</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Stone / Monument -->
+<div class="modal fade" id="modalStone" tabindex="-1" aria-labelledby="stoneLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title fs-4" id="stoneLabel">Stones &amp; Monuments</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>When rulers wanted their words to outlast empires, they carved them in stone. Monuments proclaim laws, victories and prayers where everyone can read—or puzzle over millennia later—turning landscape itself into a page.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-dark" onclick="exploreTypology('Stone / Monument')">Explore&nbsp;artefacts</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Tablet -->
+<div class="modal fade" id="modalTablet" tabindex="-1" aria-labelledby="tabletLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title fs-4" id="tabletLabel">Clay&nbsp;Tablets</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Clay tablets—cheap, compact and endlessly recyclable when wet—were the notebooks of Mesopotamia. Their wedge impressions captured everything from epic poetry to beer rations, giving us the oldest continuous archive of human thought.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-dark" onclick="exploreTypology('Tablet')">Explore&nbsp;artefacts</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================  SCRIPTS  =================== -->
+<script>
+  /* theme buttons */
+  function exploreNarrative(topic) {
+    sessionStorage.setItem('narrative', topic);
+    const encoded = encodeURIComponent(topic.trim());
+    window.location.href = `items.html?narrative=${encoded}`;
+  }
+
+  /* object-type buttons */
+  function exploreTypology(type) {
+    sessionStorage.setItem('typology', type);
+    const q = encodeURIComponent(type.trim());
+    window.location.href = `items.html?typology=${q}`;
+  }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
