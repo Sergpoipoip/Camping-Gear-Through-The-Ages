@@ -25,10 +25,12 @@
   const params         = new URLSearchParams(location.search);
   const startNarrative = params.get('narrative') || sessionStorage.getItem('narrative') || '';
   const preTypology    = params.get('typology')  || sessionStorage.getItem('typology')  || '';
+  const startPeriod    = params.get('period')    || sessionStorage.getItem('period')    || '';
 
   // clean out session copies so back-navigation doesn’t re-apply filters
   sessionStorage.removeItem('narrative');
   sessionStorage.removeItem('typology');
+  sessionStorage.removeItem('period');
 
   /* ---------- Load dataset ---------- */
   fetch('items.json')
@@ -55,12 +57,15 @@
     addOpts(typologySel, it => it.info?.['Object type'] || '');
     addOpts(periodSel,   it => it.periodTag             || '');
 
-    /* --- pre-select narrative / typology if provided ------------------ */
+    /* --- pre-select narrative / typology / period if provided ------------------ */
     if (startNarrative && [...themeSel.options].some(o => o.value === startNarrative)) {
       themeSel.value = startNarrative;
     }
     if (preTypology && [...typologySel.options].some(o => o.value === preTypology.trim())) {
       typologySel.value = preTypology.trim();
+    }
+    if (startPeriod && [...periodSel.options].some(o => o.value === startPeriod.trim())) {
+      periodSel.value = startPeriod.trim();
     }
 
     /* --- event listeners --------------------------------------------- */

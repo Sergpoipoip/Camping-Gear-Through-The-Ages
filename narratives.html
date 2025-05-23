@@ -43,7 +43,8 @@
 <!-- /Navbar -->
 
 <main class="container py-5">
-  <h1 class="mb-5 text-center fw-bold">Narratives of Writing</h1>
+  <h2 class="mb-5 text-center fw-bold">Narratives of Writing</h1>
+  <p class="text-center mb-5">Choose a <strong>historical narrative</strong>, an <strong>object typology</strong> or a <strong>historical period</strong> to see how writing evolved.</p>
 
   <!-- =====  THEME NARRATIVES  ================================= -->
   <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
@@ -103,6 +104,15 @@
         Tablet
       </button>
     </div>
+  </div>
+
+  <!-- ====================  HISTORICAL PERIODS  ==================== -->
+  <h2 class="mt-5 mb-4 text-center fw-bold">Historical Periods</h2>
+  <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
+    <div class="col"><button class="btn btn-dark btn-lg w-100"  data-bs-toggle="modal" data-bs-target="#modalPrehistoric">Prehistoric</button></div>
+    <div class="col"><button class="btn btn-secondary btn-lg w-100" data-bs-toggle="modal" data-bs-target="#modalAncient">Ancient</button></div>
+    <div class="col"><button class="btn btn-secondary btn-lg w-100" data-bs-toggle="modal" data-bs-target="#modalMedieval">Medieval</button></div>
+    <div class="col"><button class="btn btn-secondary btn-lg w-100" data-bs-toggle="modal" data-bs-target="#modalModern">Modern</button></div>
   </div>
 </main>
 
@@ -299,91 +309,74 @@
 </div>
 <!-- ==================================================================== -->
 
-<!-- Counting tool -->
-<div class="modal fade" id="modalCounting" tabindex="-1" aria-labelledby="countingLabel" aria-hidden="true">
+<!-- ====================  MODALS : PERIODS  ==================== -->
+<!-- Prehistoric -->
+<div class="modal fade" id="modalPrehistoric" tabindex="-1" aria-labelledby="prehistoricLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h2 class="modal-title fs-4" id="countingLabel">Counting tools</h2>
+        <h2 class="modal-title fs-4" id="prehistoricLabel">Prehistoric</h2>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <p>Notches on bone, beads on string, grooves in clay: before words there were numbers. Counting tools transformed fleeting quantities into permanent marks, letting early societies tax, trade and ration with confidence. By externalising arithmetic, they paved the road from tally stick to spreadsheet.</p>
+        <p>Tally bones, cave paintings and engraved shells reveal an early urge to externalise memory. These marks are not full writing, yet they foreshadow the symbolic abstraction that would one day encode language and number.</p>
       </div>
       <div class="modal-footer">
-        <button class="btn btn-dark" onclick="exploreTypology('Counting tool')">Explore&nbsp;artefacts</button>
+        <button class="btn btn-dark" onclick="explorePeriod('Prehistoric')">Explore artefacts</button>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Device / Standard -->
-<div class="modal fade" id="modalDevice" tabindex="-1" aria-labelledby="deviceLabel" aria-hidden="true">
+<!-- Ancient -->
+<div class="modal fade" id="modalAncient" tabindex="-1" aria-labelledby="ancientLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h2 class="modal-title fs-4" id="deviceLabel">Devices &amp; Standards</h2>
+        <h2 class="modal-title fs-4" id="ancientLabel">Ancient</h2>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <p>From typewriters to Unicode charts, devices and standards are the machines and rule-books that shape every letter we share. They regularise symbols, speed up production and let distant systems understand one another—the infrastructural backbone of writing.</p>
+        <p>Cuneiform, hieroglyphs, Brahmi and early alphabets transformed administration, religion and art. Empires rose on archive rooms; literature and law found their first durable vehicles in clay, papyrus and parchment.</p>
       </div>
       <div class="modal-footer">
-        <button class="btn btn-dark" onclick="exploreTypology('Device / Standard')">Explore&nbsp;artefacts</button>
+        <button class="btn btn-secondary" onclick="explorePeriod('Ancient')">Explore artefacts</button>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Manuscript / Book -->
-<div class="modal fade" id="modalManuscript" tabindex="-1" aria-labelledby="manuscriptLabel" aria-hidden="true">
+<!-- Medieval -->
+<div class="modal fade" id="modalMedieval" tabindex="-1" aria-labelledby="medievalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h2 class="modal-title fs-4" id="manuscriptLabel">Manuscripts &amp; Books</h2>
+        <h2 class="modal-title fs-4" id="medievalLabel">Medieval</h2>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <p>Scrolls, codices and printed volumes turned fragile speech into portable libraries. By binding sheets together they protected texts, encouraged pagination and invited marginalia—technologies that still frame how we cite and think today.</p>
+        <p>Scribes in monasteries and royal chancelleries preserved and copied texts, while illuminated manuscripts made books art objects. Paper arrived from the East, paving the way for Europe’s printing revolution.</p>
       </div>
       <div class="modal-footer">
-        <button class="btn btn-dark" onclick="exploreTypology('Manuscript / Book')">Explore&nbsp;artefacts</button>
+        <button class="btn btn-secondary" onclick="explorePeriod('Medieval')">Explore artefacts</button>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Stone / Monument -->
-<div class="modal fade" id="modalStone" tabindex="-1" aria-labelledby="stoneLabel" aria-hidden="true">
+<!-- Modern -->
+<div class="modal fade" id="modalModern" tabindex="-1" aria-labelledby="modernLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h2 class="modal-title fs-4" id="stoneLabel">Stones &amp; Monuments</h2>
+        <h2 class="modal-title fs-4" id="modernLabel">Modern</h2>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <p>When rulers wanted their words to outlast empires, they carved them in stone. Monuments proclaim laws, victories and prayers where everyone can read—or puzzle over millennia later—turning landscape itself into a page.</p>
+        <p>Print, typewriters and digital code accelerated the production and spread of text. Mass literacy, newspapers and the internet turned writing into a truly global, instantaneous medium.</p>
       </div>
       <div class="modal-footer">
-        <button class="btn btn-dark" onclick="exploreTypology('Stone / Monument')">Explore&nbsp;artefacts</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Tablet -->
-<div class="modal fade" id="modalTablet" tabindex="-1" aria-labelledby="tabletLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2 class="modal-title fs-4" id="tabletLabel">Clay&nbsp;Tablets</h2>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p>Clay tablets—cheap, compact and endlessly recyclable when wet—were the notebooks of Mesopotamia. Their wedge impressions captured everything from epic poetry to beer rations, giving us the oldest continuous archive of human thought.</p>
-      </div>
-      <div class="modal-footer">
-        <button class="btn btn-dark" onclick="exploreTypology('Tablet')">Explore&nbsp;artefacts</button>
+        <button class="btn btn-secondary" onclick="explorePeriod('Modern')">Explore artefacts</button>
       </div>
     </div>
   </div>
@@ -403,6 +396,12 @@
     sessionStorage.setItem('typology', type);
     const q = encodeURIComponent(type.trim());
     window.location.href = `items.html?typology=${q}`;
+  }
+
+  function explorePeriod(period) {
+    sessionStorage.setItem('period', period);
+    sessionStorage.removeItem('narrative'); sessionStorage.removeItem('typology');
+    location.href = 'items.html?period=' + encodeURIComponent(period);
   }
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
