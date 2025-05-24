@@ -26,6 +26,8 @@
   const startNarrative = params.get('narrative') || sessionStorage.getItem('narrative') || '';
   const preTypology    = params.get('typology')  || sessionStorage.getItem('typology')  || '';
   const startPeriod    = params.get('period')    || sessionStorage.getItem('period')    || '';
+  const startSid       = params.get('sid') || '';
+
 
   // clean out session copies so back-navigation doesn’t re-apply filters
   sessionStorage.removeItem('narrative');
@@ -39,6 +41,11 @@
       items = (data.items || []).sort((a, b) => +a['@sort'] - +b['@sort']);
       buildFilters();
       renderGrid();
+      if (startSid) {                        // NEW
+        showModal(startSid);                 // NEW – pops the correct card
+        params.delete('sid');                // NEW – so F5 doesn’t re-open it
+        history.replaceState(null, '', location.pathname + '?' + params); // NEW
+      }
     })
     .catch(err => {
       console.error(err);
