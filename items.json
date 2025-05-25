@@ -32,7 +32,7 @@
 				"Creator": "-",
 				"Production Date": "7thC BC",
                 "Housed in": "The British Museum, London, United Kingdom",
-				"Original Location": "-",
+				"Original Location": "Library of Ashurbanipal, Nineveh, Neo-Assyrian Empire",
 				"Findspot": "Kouyunjik, Iraq",
 				"Subjects": "Religion & Myth" 
 			},
@@ -74,8 +74,7 @@
                 "Housed in": "Regional Archaeological Museum Antonio Salinas, Palermo, Italy",
 				"Original Location": "Likely Memphis or Heliopolis",
 				"Findspot": "Unknown",
-				"Subjects": "Governance & Law" 
-				
+				"Subjects": "Governance & Law" 	
 		},
 			"shortInfo": "Discover the Palermo Stone, one of the oldest surviving historical records from ancient Egypt, offering a rare glimpse into the reigns and rituals of Egypt’s earliest kings.", 
 			"longerInfo": ["This fragment of black basalt is part of a larger royal annals stele, meticulously documenting the reigns, ceremonies, and Nile flood levels of Egypt’s Old Kingdom rulers. As one of the earliest surviving historical documents, the Palermo Stone represents a critical shift from simple record-keeping to formalized historiography, showcasing how ancient Egyptians developed systematic methods to archive their past"],
@@ -94,9 +93,8 @@
                 "Production Date": "c. 1250–1050 BC",
                 "Housed in": "National Museum of China, Beijing, China",
 				"Original Location": "Yinxu (modern Anyang, Henan), the Shang capital",
-				"Findspot": "Yinxu",
-				"Subjects": "Religion & Myth"
-				
+				"Findspot": "Anyang, Henan, China",
+				"Subjects": "Religion & Myth"		
 		},
 			"shortInfo": "Explore the earliest attested form of Chinese writing, inscribed on ox scapulae and turtle plastrons for divination during the late Shang dynasty.", 
 			"longerInfo": ["Oracle bone inscriptions, known in Chinese as Jiaguwen, constitute the oldest corpus of Chinese writing, dating to the late second millennium BCE and carved onto animal bones and turtle shells for divinatory practices. These inscriptions record the Shang royal court’s questions to ancestors and deities on topics ranging from weather and agriculture to war and hunting, offering invaluable insights into early Chinese language, ritual, and governance."],
@@ -114,7 +112,7 @@
                 "Creator": "Senior scribe working for the palatial administration at Pylos",
                 "Production Date": "c. 1180 BC",
                 "Housed in": "National Archaeological Museum, Athens, Greece",
-				"Original Location": "Mycenae",
+				"Original Location": "Mycenae, Peloponnese, Greece",
 				"Findspot": "Pylos, Messenia",
 				"Subjects": "Commerce & Administration"
 				
@@ -135,8 +133,8 @@
                 "Creator": "-",
                 "Production Date": "c. 1000 BC",
                 "Housed in": "National Museum of Beirut, Lebanon",
-				"Original Location": "Byblos (Levant, Phoenicia)",
-				"Findspot": "Byblos (Levant, Phoenicia)",
+				"Original Location": "Byblos, Phoenicia",
+				"Findspot": "Byblos Levant, Phoenicia",
 				"Subjects": "Religion & Myth"
 				
 		},
@@ -296,7 +294,7 @@
 				"Creator": "Herman Hollerith",
 				"Production Date": "1887 CE",
 				"Housed in": "National Museum of American History, Washington, USA",
-				"Original Location": "-",
+				"Original Location": "Washington, USA",
 				"Findspot": "-",
 				"Subjects": "Technology & Communication" 		
 			},
