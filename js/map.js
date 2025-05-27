@@ -1,49 +1,43 @@
-/*  js/map.js  -----------------------------------------------------------
-    Leaflet map with marker clustering, place-name fuzziness and
-    hyperlinks from each popup to items.html?sid=<@sort>.
-    Works with items.json in the project root.
----------------------------------------------------------------------------*/
-(async function () {
+/* js/map.js
+   Leaflet map + clustering + fuzzy place matching +
+   Theme / Typology / Period filters (same logic as items.js) +
+   pop-up links to items.html?sid=…
+*/
+(async function() {
 
-  /* ────────────── 1 · MAP + BASE LAYER ───────────── */
-  const map     = L.map('map', { worldCopyJump: false });
-  const cluster = L.markerClusterGroup({ spiderfyOnMaxZoom: true });
+  /* ─────────── 1 · MAP & BASELAYER ─────────── */
+  const map     = L.map('map',{worldCopyJump:false});
+  const cluster = L.markerClusterGroup({spiderfyOnMaxZoom:true});
 
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom : 10,
-      noWrap  : true,
-      bounds  : [[-85, -180], [85, 180]],
-      attribution : '&copy; OpenStreetMap contributors'
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+    maxZoom:10, noWrap:true, bounds:[[-85,-180],[85,180]],
+    attribution:'&copy; OpenStreetMap contributors'
   }).addTo(map);
 
-  /* ensure exactly one world fits horizontally (no grey bars) */
-  function calcMinZoom () {
-    const px = map.getSize().x;          // map width in pixels
-    let z = 2;                           // world is 256 px at z=0
-    while (256 * 2 ** z < px && z < 10) z++;
+  const calcMinZoom=()=>{
+    const w=map.getSize().x; let z=2;
+    while(256*2**z< w && z<10) z++;
     return z;
-  }
-  const minZ = calcMinZoom();
-  map.setView([20, 0], minZ);
+  };
+  const minZ=calcMinZoom();
+  map.setView([20,0],minZ);
   map.setMinZoom(minZ);
-  map.setMaxBounds([[-85, -180], [85, 180]]);
-  window.addEventListener('resize', () => {
-    const z = calcMinZoom();
+  map.setMaxBounds([[-85,-180],[85,180]]);
+  window.addEventListener('resize',()=>{
+    const z=calcMinZoom();
     map.setMinZoom(z);
-    if (map.getZoom() < z) map.setZoom(z);
+    if(map.getZoom()<z) map.setZoom(z);
   });
 
-  /* ────────────── 2 · ICONS ───────────────────────── */
-  const icon = colour => L.icon({
-    iconUrl   : `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-${colour}.png`,
-    iconSize  : [25, 41],
-    iconAnchor: [12, 41],
-    popupAnchor:[1, -34],
-    shadowUrl : 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
-    shadowSize: [41, 41]
+  /* ─────────── 2 · ICONS ─────────── */
+  const makeIcon=color=>L.icon({
+    iconUrl:`https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-${color}.png`,
+    iconSize:[25,41], iconAnchor:[12,41], popupAnchor:[1,-34],
+    shadowUrl:'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
+    shadowSize:[41,41]
   });
-  const ICON_ORIG = icon('orange');   // original site
-  const ICON_CURR = icon('blue');     // current museum
+  const ICON_ORIG = makeIcon('orange');
+  const ICON_CURR = makeIcon('blue');
 
   /* ────────────── 3 · CO-ORD DICTIONARY ───────────── */
   /* One entry for every distinct place string occurring in items.json.
@@ -58,7 +52,7 @@
     "Uruk, Sumer, Mesopotomia":                     {lat: 31.322, lng: 45.636},
     "The British Museum, London, United Kingdom":   {lat: 51.519, lng:-0.126, url:"https://www.britishmuseum.org"},
     "Regional Archaeological Museum Antonio Salinas, Palermo, Italy":
-                                                    {lat: 38.121, lng: 13.356, url:"https://www.regione.sicilia.it/beniculturali"},
+                                                    {lat: 38.121, lng: 13.356, url:"https://turismo.comune.palermo.it/palermo-welcome-luogo-dettaglio.php?tp=68&det=21&id=178"},
     "Yinxu (modern Anyang, Henan), the Shang capital":
                                                     {lat: 36.133, lng:114.350},
     "National Museum of China, Beijing, China":     {lat: 39.904, lng:116.397, url:"https://en.chnmuseum.cn"},
@@ -105,68 +99,101 @@
     "National Library of France":             {lat: 48.833, lng:  2.375, url:"https://www.bnf.fr"}
   };
 
-  /* ────────────── 4 · NORMALISED LOOK-UP ─────────── */
-  const norm = s => s.replace(/\u202f|\u00a0/g, ' ')
-                     .replace(/\s+/g, ' ')
-                     .toLowerCase().trim();
+  /* ─────────── 4 · NORMALISED LOOKUP ─────────── */
+  const norm=s=>s.replace(/\u202f|\u00a0/g,' ').replace(/\s+/g,' ').toLowerCase().trim();
+  const NORM=Object.fromEntries(Object.entries(PLACES)
+    .map(([k,v])=>[norm(k),v]));
 
-  const NORM_PLACES = Object.fromEntries(
-    Object.entries(PLACES).map(([k, v]) => [norm(k), v])
-  );
-
-  /* Resolve free-text field → array of coords objects */
-  function resolvePlaces(raw) {
-    if (!raw || raw === '-') return [];
-    raw = raw.replace(/[…]/g, '');
-
-    return raw.split(';').flatMap(seg => {
-      seg = seg.trim();
-      if (!seg) return [];
-
-      seg = seg.replace(/^[0-9]+[^,]*,\s*/, '').trim();      // drop leading counts
-      const n = norm(seg);
-      if (NORM_PLACES[n]) return [NORM_PLACES[n]];
-
-      const hit = Object.keys(NORM_PLACES).find(k => n.includes(k) || k.includes(n));
-      return hit ? [NORM_PLACES[hit]] : [];
+  function resolvePlaces(raw){
+    if(!raw||raw==='-') return [];
+    raw=raw.replace(/[…]/g,'');
+    return raw.split(';').flatMap(seg=>{
+      seg=seg.trim();
+      if(!seg) return [];
+      seg=seg.replace(/^[0-9]+[^,]*,\s*/,'').trim();
+      const n=norm(seg);
+      if(NORM[n]) return [NORM[n]];
+      const hit=Object.keys(NORM).find(k=>n.includes(k)||k.includes(n));
+      return hit?[NORM[hit]]:[];
     });
   }
 
-  /* ────────────── 5 · FETCH DATA & PLOT ───────────── */
-  const items = (await fetch('items.json').then(r => r.json())).items;
+  /* ─────────── 5 · FILTER SETUP ─────────── */
+  const themeSel    = document.getElementById('filterTheme');
+  const typologySel = document.getElementById('filterTypology');
+  const periodSel   = document.getElementById('filterPeriod');
+  const resetBtn    = document.getElementById('filterReset');
 
-  items.forEach(it => {
-    const pairs = [
-      { field: it.info["Original Location"], icon: ICON_ORIG, label: "Original site" },
-      { field: it.info["Housed in"],         icon: ICON_CURR, label: "Current museum" }
-    ];
+  /* Fetch items.json and build markers + filters */
+  const data  = await fetch('items.json').then(r=>r.json());
+  const items = data.items || [];
 
-    pairs.forEach(cfg => {
-      resolvePlaces(cfg.field).forEach(entry => {
+  // populate filter dropdowns (same as in items.js)
+  const addOpts=(sel,extractor)=>{
+    const set=new Set(items.map(extractor).filter(Boolean));
+    Array.from(set).sort().forEach(v=>
+      sel.insertAdjacentHTML('beforeend',`<option value="${v}">${v}</option>`));
+  };
+  addOpts(themeSel, it=> it.info?.Subjects);
+  addOpts(typologySel, it=> it.info?.['Object type']);
+  addOpts(periodSel, it=> it.periodTag);
 
-        /* Build hyperlink: items.html?sid=<@sort> so items.js pops the modal automatically */
+  /* Build all markers once, storing their metadata */
+  const markerData = [];
+  items.forEach(it=>{
+    const themes  = new Set((it.info?.Subjects   ||'').split(';').map(s=>s.trim()));
+    const types   = new Set((it.info?.['Object type']||'').split(';').map(s=>s.trim()));
+    const periods = new Set(it.periodTag?[it.periodTag] : []);
+
+    [
+      {field: it.info["Original Location"], icon: ICON_ORIG, label:"Original site"},
+      {field: it.info["Housed in"],         icon: ICON_CURR, label:"Current museum"}
+    ].forEach(cfg=>{
+      resolvePlaces(cfg.field).forEach(entry=>{
         const link = `<a href="items.html?sid=${encodeURIComponent(it['@sort'])}">${it.shortName}</a>`;
-
-        const popup = `
+        const html = `
           <strong>${link}</strong><br>
           ${cfg.label}<br>
-          <em>${cfg.field}</em><br>
-          ${entry.url ? `<a href="${entry.url}" target="_blank">Museum website&nbsp;&raquo;</a>` : ''}`;
-
-        L.marker([entry.lat, entry.lng], { icon: cfg.icon })
-         .bindPopup(popup, { minWidth: 220 })
-         .addTo(cluster);
+          <em>${cfg.field}</em>
+          ${entry.url?`<br><a href="${entry.url}" target="_blank">Museum website »</a>`:''}
+        `;
+        const m = L.marker([entry.lat, entry.lng],{icon:cfg.icon})
+                    .bindPopup(html,{minWidth:220});
+        markerData.push({marker:m,themes,types,periods});
       });
     });
   });
 
-  map.addLayer(cluster);
+  /* Refresh cluster layer based on selected filters */
+  function refreshMarkers(){
+    cluster.clearLayers();
+    const t=themeSel.value, y=typologySel.value, p=periodSel.value;
+    markerData.forEach(md=>{
+      if((!t||md.themes.has(t)) &&
+         (!y||md.types.has(y)) &&
+         (!p||md.periods.has(p))) {
+        cluster.addLayer(md.marker);
+      }
+    });
+    map.addLayer(cluster);
+  }
 
-  /* ────────────── 6 · LEGEND ──────────────────────── */
-  L.control({position:'topright'}).onAdd = () => {
-    const d = L.DomUtil.create('div', 'legend shadow');
-    d.innerHTML =
-      `<span style="display:inline-block;width:14px;height:14px;background:#ff5722;border-radius:50%;margin-right:6px"></span>Original&nbsp;&nbsp;
+  themeSel.addEventListener('change',refreshMarkers);
+  typologySel.addEventListener('change',refreshMarkers);
+  periodSel.addEventListener('change',refreshMarkers);
+  resetBtn.addEventListener('click',()=>{
+    themeSel.value=''; typologySel.value=''; periodSel.value='';
+    refreshMarkers();
+  });
+
+  // initial render
+  refreshMarkers();
+
+  /* ─────────── 6 · LEGEND ─────────── */
+  L.control({position:'topright'}).onAdd=()=>{
+    const d=L.DomUtil.create('div','legend shadow');
+    d.innerHTML=
+      `<span style="display:inline-block;width:14px;height:14px;background:#ff5722;border-radius:50%;margin-right:6px"></span>Original  
        <span style="display:inline-block;width:14px;height:14px;background:#0077ff;border-radius:50%;margin-right:6px"></span>Current`;
     return d;
   };addTo(map);

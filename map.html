@@ -5,70 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Map · Evolution of Writing</title>
 
-  <!-- favicon + common CSS already present in the project -->
   <link rel="icon" type="image/png" href="imgs/favicon-32x32.png">
   <link rel="stylesheet" href="css/common.css">
 
-  <!-- Leaflet (map) assets  -->
-  <link rel="stylesheet"
-        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <!-- Leaflet core + clustering -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
   <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <!-- Leaflet-markercluster -->
-  <link rel="stylesheet"
-        href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
-  <link rel="stylesheet"
-        href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
-  <script defer
-        src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const testMap = L.map('map').setView([0,0],2);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-                    {maxZoom:10, attribution:'&copy; OSM'}).addTo(testMap);
-    });
-  </script>
+  <script defer src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 
-
-  <!-- Bootstrap (already used elsewhere) -->
+  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- page-specific style -->
   <style>
-    #map { height: calc(100vh - 70px - 180px); }      /* full screen minus navbar + footer */
-    .leaflet-popup-content { line-height: 1.4rem; }
-    .legend { background: white; padding: 6px 10px; border-radius: 5px; font-size:.85rem;}
-    .legend span { display:inline-block; width:14px; height:14px; margin-right:6px; border-radius:50%; }
-    .legend .orig { background:#ff5722; }
-    .legend .curr { background:#0077ff; }
-
-    /* --- map + side pane -------------------------------------------------- */
-    .page-body       { height: calc(100vh - 70px - 40px); }  /* minus navbar+footer */
-    #map             { width: 100%;   height: 100%;   min-height: 400px; }
-    #map-info        { width: 100%;   max-width: 33.333%; }
-
-    /* ≤ LG breakpoint → stack vertically (mobile/tablet) */
-    @media (max-width: 991.98px){
-    #map-info { max-width: 100%; border-top: 1px solid #dee2e6; }
-    }
-
-    /* hide the tiny 🇺🇦 icon that comes with the OSM tile attribution */
-    .leaflet-control-attribution img { display: none; }
+    body, .page-body { height:100vh; margin:0; }
+    .page-body      { display:flex; flex-direction:column; }
+    @media(min-width:992px){ .page-body{ flex-direction:row; } }
+    #map            { flex:1 1 0; min-height:400px; }
+    #map-info       { width:100%; max-width:33.333%; overflow-y:auto; }
+    @media(max-width:991.98px){ #map-info{ max-width:100%; } }
+    .leaflet-control-attribution img { display:none; }
   </style>
 </head>
 <body class="bg-light">
 
-  <!-- simple nav (same structure as other pages) -->
+  <!-- Navbar (same as items.html) -->
   <nav class="navbar navbar-expand-md navbar-light bg-white border-bottom">
     <div class="container">
       <div class="d-flex align-items-center gap-2">
-        <img src="imgs/favicon-32x32.png" alt="Logo" width="32" height="32">
+        <img src="imgs/favicon-32x32.png" width="32" height="32" alt="">
         <a class="navbar-brand fw-semibold" href="index.html">
           <span id="highlight">Evolution</span> of Writing
         </a>
       </div>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-              data-bs-target="#navMenu" aria-controls="navMenu"
-              aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navMenu">
@@ -76,38 +47,68 @@
           <li class="nav-item"><a class="nav-link" href="narratives.html">Narratives</a></li>
           <li class="nav-item"><a class="nav-link" href="items.html">Items</a></li>
           <li class="nav-item"><a class="nav-link" href="timeline.html">Timeline</a></li>
-          <li class="nav-item"><a class="nav-link active" aria-current="page" href="map.html">Map</a></li>
+          <li class="nav-item"><a class="nav-link active" href="map.html">Map</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!--  the live map  -->
-  <div class="page-body d-flex flex-column flex-lg-row">
+  <!-- Two-column body: map | sidebar -->
+  <div class="page-body">
 
-  <!-- MAP – occupies 2/3 of the width on ≥ lg screens -->
-  <div id="map" class="flex-grow-1"></div>
+    <!-- MAP -->
+    <div id="map" class="shadow-sm"></div>
 
-    <!-- SIDE PANEL – occupies 1/3;   put any text / html you like here -->
-    <aside id="map-info" class="p-4 bg-white border-top border-lg-start">
-        <h3>Artefact journeys</h3>
-        <p>
-            Orange pins mark the artefacts’ <strong>original</strong>
-            discovery sites; blue pins show their <strong>current
-            museum</strong>.  
-            Click a marker for details and a direct link to the museum website.
-        </p>
-        <!-- you can add more arbitrary content, images, links, … -->
+    <!-- SIDEBAR with filters -->
+    <aside id="map-info" class="bg-white border-top border-lg-start p-4">
+      <h3>Artefact journeys</h3>
+      <p class="small">
+        Orange markers = original discovery sites; blue = current museums.
+      </p>
+      <hr>
+
+      <!-- Filters (ids match items.js) -->
+      <div class="mb-3">
+        <label for="filterTheme" class="form-label fw-semibold">Theme</label>
+        <select id="filterTheme" class="form-select">
+          <option value="">All</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="filterTypology" class="form-label fw-semibold">Typology</label>
+        <select id="filterTypology" class="form-select">
+          <option value="">All</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="filterPeriod" class="form-label fw-semibold">Period</label>
+        <select id="filterPeriod" class="form-select">
+          <option value="">All</option>
+        </select>
+      </div>
+      <button id="filterReset" class="btn btn-outline-secondary btn-sm w-100">
+        Reset filters
+      </button>
     </aside>
+
   </div>
 
-  <footer class="footer">
-    <small>&copy; 2025 The Evolution of Writing – map created with Leaflet &amp; OpenStreetMap</small>
+  <!-- FOOTER -->
+  <footer class="footer" id="999">
+  <!-- Copyright -->
+  <p>&#169; 2025 Copyright: <a href="#">The Evolution of Writing</a></p>
+  <p><i>This is the final project for the course <a href="https://www.unibo.it/it/studiare/dottorati-master-specializzazioni-e-altra-formazione/insegnamenti/insegnamento/2023/454464" target="_blank">Information Modelling and Web Technologies</a>, taught by Professor Fabio Vitali at the University of Bologna during the 2023/2024 academic year, as part of the Master's program in <a href="https://corsi.unibo.it/2cycle/DigitalHumanitiesKnowledge" target="_blank">Digital Humanities and Digital Knowledge</a>.</i></p>
+  <p><a href="documentation.html" target="_blank">The full documentation of the project</a>.</p>
+  <small>Powered by Bootstrap</small>
+  <div class="footer-icon">
+      <a href="https://github.com/Sergpoipoip/From-Clay-Tablet-To-Screen" target="_blank" title="GitHub">
+          <img src="imgs/git.svg" alt="GitHub Icon">
+      </a>
+  </div>        
   </footer>
 
-  <!-- main logic -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
-  <script src="js/map.js" defer></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script defer src="js/map.js"></script>
 </body>
 </html>
