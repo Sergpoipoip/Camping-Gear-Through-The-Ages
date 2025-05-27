@@ -243,7 +243,6 @@
 /* -------------- Start Footer ---------------*/
 
 footer.footer {
-    height: 100%;
     bottom: 0; /* Aligns it to the bottom of the parent */
     background-color: var(--footer);
     display: flex; /* Enables flexbox */
