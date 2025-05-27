@@ -21,7 +21,7 @@
 			"fullInfo": "items_descriptions/ishangoBone.html"
 		},
 		{
-			"@sort": "2",
+			"@sort": "7",
 			"shortName": "The Gilgamesh Tablet",
 			"image": "imgs/items/GilgameshTablet.jpg",
 			"periodTag": "Ancient",
@@ -41,7 +41,7 @@
 			"fullInfo": "items_descriptions/gilgamesh.html"
 		},
 		{
-			"@sort": "3",
+			"@sort": "2",
 			"shortName": "Uruk Beer Rations Tablet",
 			"image": "imgs/items/urukTablet.jpg",
 			"periodTag": "Ancient",
@@ -61,7 +61,7 @@
 			"fullInfo": "items_descriptions/uruk.html"
 		},
 		{
-			"@sort": "4",
+			"@sort": "3",
 			"shortName": "Palermo Stone",
 			"image": "imgs/items/PalermoStone.jpg",
 			"periodTag": "Ancient",
@@ -81,7 +81,7 @@
 			"fullInfo": "items_descriptions/palermoStone.html"
 		},
 		{
-			"@sort": "5",
+			"@sort": "4",
 			"shortName": "Oracle Bone Inscriptions",
 			"image": "imgs/items/oracleBones.jpeg",
 			"periodTag": "Ancient",
@@ -101,7 +101,7 @@
 			"fullInfo": "items_descriptions/oracleBones.html"
 		},
 		{
-			"@sort": "6",
+			"@sort": "5",
 			"shortName": "Linear B Tablet",
 			"image": "imgs/items/linearBtablet.jpg",
 			"periodTag": "Ancient",
@@ -122,7 +122,7 @@
 			"fullInfo": "items_descriptions/linearB.html"
 		},
 		{
-			"@sort": "7",
+			"@sort": "6",
 			"shortName": "Ahiram Sarcophagus",
 			"image": "imgs/items/Ahiram.jpg",
 			"periodTag": "Ancient",
@@ -143,7 +143,7 @@
 			"fullInfo": "items_descriptions/ahiram.html"
 		},
 		{
-			"@sort": "8",
+			"@sort": "9",
 			"shortName": "Rosetta Stone",
 			"image": "imgs/items/rosettaStone.jpg",
 			"periodTag": "Ancient",
@@ -163,7 +163,7 @@
 			"fullInfo": "items_descriptions/rosettaStone.html"
 		},
 		{
-			"@sort": "9",
+			"@sort": "8",
 			"shortName": "Derveni Papyrus",
 			"image": "imgs/items/derveni.jpg",
 			"periodTag": "Ancient",
