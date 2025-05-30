@@ -86,3 +86,26 @@
       .tl-item.above  { transform: translateY(-90px); }
       .tl-item.below  { transform: translateY(125px); } /* ← 20 px lower */
     }
+
+    /* ─── date label ─────────────────────────────── */
+    .tl-date{
+      position:absolute;          /* park it inside the tile */
+      left:50%; transform:translateX(-50%);
+      font-size:.85rem; font-weight:600;
+      color:var(--tl-accent);
+      white-space:nowrap;         /* keep one-line */
+    }
+
+    /* where the label sits depends on the tile position */
+    .tl-item.above .tl-date{   /* tiles that float above the line → put label below */
+      top:100%; margin-top:.6rem;
+    }
+    .tl-item.below .tl-date{   /* tiles that float below the line → put label above */
+      bottom:100%; margin-bottom:.6rem;
+    }
+
+    /* (optional) give a touch more clearance for the below-line tiles */
+    .tl-item.below{ transform:translateY(110px); }      /* was 90 / 125 in media-query */
+    @media (min-width:768px){
+      .tl-item.below{ transform:translateY(145px); }    /* desktop offset */
+    }

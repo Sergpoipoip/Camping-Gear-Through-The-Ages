@@ -45,13 +45,20 @@ const tlContainer = document.getElementById('timeline');
           const tile = document.createElement('div');
           tile.className = `tl-item fade-item ${placeAbove ? 'above' : 'below'}`;
           placeAbove = !placeAbove;
-          tile.tabIndex = 0;
+          // tile.tabIndex = 0;
 
           /* image */
           const img = document.createElement('img');
           img.src = it.image;
           img.alt = it.shortName;
           tile.appendChild(img);
+
+          /* ✱ NEW: production-date label ✱ */
+          const date = document.createElement('span');
+          date.className = 'tl-date';
+          // prefer a dedicated property, fall back to the one inside “info”
+          date.textContent = it.date || it.info?.['Production Date'] || '';
+          tile.appendChild(date);
 
           /* hover overlay */
           const ov  = document.createElement('div');
