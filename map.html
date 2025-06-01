@@ -6,7 +6,6 @@
   <title>Map · Evolution of Writing</title>
 
   <link rel="icon" type="image/png" href="imgs/favicon-32x32.png">
-  <link rel="stylesheet" href="css/common.css">
 
   <!-- Leaflet core + clustering -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
@@ -15,8 +14,12 @@
   <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script defer src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 
+  <!-- Google CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Crimson+Text&display=swap" rel="stylesheet">
+
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/common.css">
 
   <style>
     body, .page-body { height:100vh; margin:0; }
@@ -26,14 +29,17 @@
     #map-info       { width:100%; max-width:33.333%; overflow-y:auto; }
     @media(max-width:991.98px){ #map-info{ max-width:100%; } }
     .leaflet-control-attribution img { display:none; }
+    /* let the global parchment show through */
+    #map,
+    .leaflet-container{ background:transparent !important; }
   </style>
 </head>
-<body class="bg-light">
+<body>
 
   <!-- Navbar (same as items.html) -->
-  <nav class="navbar navbar-expand-md navbar-light bg-white border-bottom">
+  <nav class="navbar navbar-expand-md navbar-light border-bottom">
     <div class="container">
-      <div class="d-flex align-items-center gap-2">
+      <div id="projectTitle" class="d-flex align-items-center gap-2">
         <img src="imgs/favicon-32x32.png" width="32" height="32" alt="">
         <a class="navbar-brand fw-semibold" href="index.html">
           <span id="highlight">Evolution</span> of Writing
@@ -61,10 +67,10 @@
     <div id="map" class="shadow-sm"></div>
 
     <!-- SIDEBAR with filters -->
-    <aside id="map-info" class="bg-white border-top border-lg-start p-4">
+    <aside id="map-info" class="border-top border-lg-start p-4">
       <h3>Artefact journeys</h3>
       <p class="small">
-        Orange markers = original discovery sites; blue = current museums.
+        Orange markers — original discovery sites; blue — current museums.
       </p>
       <hr>
 
