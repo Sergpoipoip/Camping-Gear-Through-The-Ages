@@ -126,6 +126,42 @@ h1, h2, h3, h4, h5, h6,
 #menu-links a:nth-child(even) { background-color: var(--color5); }
 #menu-links a:hover { background-color: var(--color5); }
 
+/* centred EXPLORE panel -------------------------------------- */
+#buttons{
+  /* centre the whole block inside #description */
+  align-self: center;
+  margin: 0 auto;
+
+  /* — switch from flex to grid — */
+  display: grid;
+  grid-template-columns: repeat(4, minmax(120px, 1fr)); /* 4 equal cells   */
+  grid-auto-rows: auto;                                 /* row height auto */
+  gap: 1rem 2.5rem;               /* row gap , column gap                 */
+  justify-items: center;          /* centre each button inside its cell   */
+
+  /* keep coloured backdrop (optional—remove for parchment) */
+  padding: 1.25rem 2rem;
+  background-color: var(--color3);
+  border-radius: 8px;
+}
+
+/* centre the “EXPLORE:” heading itself */
+#buttons h3{
+  grid-column: 1 / -1;                /* full-width */
+  margin: 0 0 .5rem 0;
+  text-align: center;
+  color: var(--colorBackground);       /* optional tint */
+}
+
+/* optional—keep button size tidy */
+#buttons .btn{ width: 160px; }
+
+/* phones: let buttons wrap two-per-row */
+@media (max-width: 576px){
+  #buttons{ grid-template-columns: repeat(2, 1fr); }
+}
+
+
 /*-----------------------------------------
 | 6. Footer
 ------------------------------------------*/
@@ -215,3 +251,48 @@ footer.footer a:hover { color: var(--color5); }
   outline: 2px dashed var(--color5);
   outline-offset: 4px;
 }
+
+#about{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-left: 20%;
+  padding-right: 20%;
+  gap: 8vh;
+}
+
+/* ----------  Find-Us  -------------------------------------------------- */
+#find-us{
+  display:grid;
+  grid-template-columns: 3fr 2fr;  /* map ~60 %, info ~40 %              */
+  column-gap: 2rem;
+  row-gap: 1.5rem;
+}
+
+#find-us h2{ grid-column:1 / -1; text-align:left; margin:0; }
+
+#museumMap{
+  width:100%;
+  height:320px;
+  border-radius:.5rem;
+  overflow:hidden;
+}
+
+/* tighten spacing + stretch the info column */
+#infoBox{
+  display:flex;                 /* stack the three sections           */
+  flex-direction:column;
+  justify-content:space-between;/* top block flush-top, last flush-bottom */
+  height:100%;                  /* same height as the map area        */
+}
+
+#infoBox h5{                    /* less space above/below the titles  */
+  margin:0 0 .25rem 0;
+}
+
+#infoBox ul{                    /* trim list spacing                  */
+  margin:0 0 1rem 0;            /*   1 rem between the three groups   */
+  list-style:none;              /* (bullets weren’t needed)           */
+  padding:0;
+}
+#infoBox ul:last-child{ margin-bottom:0; }  /* makes bottom line sit flush */

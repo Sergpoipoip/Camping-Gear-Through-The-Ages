@@ -109,8 +109,13 @@
                         <p>On this website you can explore 5,000 years of human communication through 20 iconic artifacts — from ancient Mesopotamian cuneiform to the digital emoji. This interactive exhibition traces how writing shaped civilizations, featuring rare manuscripts, the Gutenberg Bible, and the first computer code. Discover stories of scribes, inventors, and rebels who transformed how we record thought.</p>
                     </div>
                     <div id="part-2">
-                        <h2>DISCOVER THE EXHIBITION</h2>
-                        <p>Some text should be here...</p>
+                        <h2>Disclaimer</h2>
+                        <p>The purpose of this web site is to explore various types of typographic and layout style for text documents, as an end-of-course project for the "Information Modeling and Web technologies" course of the Master Degree in Digital Humanities and Digital Knowledge of the University of Bologna, under prof. Fabio Vitali.</p>
+                        <p>All copyrights and related rights on the content remain with their original owners. All copyright on the typographic and layout choices are 2025 © The Evolution of Writing.</p>
+                    </div>
+                    <div id="part-3">
+                        <h2>Discover the exhibition</h2>
+                        <p>The exposition traces humanity’s 20 000-year quest to capture thought in lasting marks. The exhibition gathers 16 pivotal artifacts — from Paleolithic tally bones and Sumerian cuneiform tablets, through codices and the first printed books, to the typewriter and character codebook. Each object represents a breakthrough in medium (stone, parchment, paper) or method (pictograph, alphabet, movable type, digital code), letting visitors see — and touch — the technological, social, and artistic leaps that shaped how we record knowledge. Together the pieces reveal writing’s evolution as a continuous conversation between ideas, materials, and the human urge to communicate across time.</p>
                         </br>
                     </div>
                 </div>
@@ -130,7 +135,55 @@
                     </button>
                 </div>
             </div>
+            <section id="find-us" class="my-5">
+              <h2 class="section-title mb-4">Find Us</h2>
+
+              <div id="museumMap"></div>
+              <div id="infoBox">
+                  <h5 class="fw-semibold mb-2">Address</h5>
+                  <p class="mb-3">
+                    Via dell'Archiginnasio 2<br>
+                    40124 Bologna (BO), Italy
+                  </p>
+
+                  <h5 class="fw-semibold mb-2">Opening Hours</h5>
+                  <ul class="list-unstyled mb-3">
+                    <li>Tue – Sun&nbsp;&nbsp;10:00 – 18:00</li>
+                    <li>Closed on Mondays</li>
+                  </ul>
+
+                  <h5 class="fw-semibold mb-2">Ticket Prices</h5>
+                  <ul class="list-unstyled">
+                    <li>Adults&nbsp;&nbsp;€ 8</li>
+                    <li>Students / 65+ &nbsp;€ 4</li>
+                    <li>Under 6&nbsp;&nbsp;Free</li>
+                  </ul>
+              </div>
+            </section>
         </div>
+
+        <!-- ▸▸  FIND US  ▸▸────────────────────────────────────── -->
+        
+
+        <!-- Leaflet (already used on map.html) -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+              integrity="sha256-.../sha512-..." crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+                integrity="sha256-.../sha512-..." crossorigin="" defer></script>
+
+        <script defer>
+        document.addEventListener('DOMContentLoaded', () => {
+          const map = L.map('museumMap', { scrollWheelZoom:false })
+                      .setView([44.4920, 11.3438], 16);      // Archiginnasio coords
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution:'&copy; OpenStreetMap contributors'
+          }).addTo(map);
+
+          L.marker([44.4920, 11.3438]).addTo(map)
+          .bindPopup('<b>Archaelogical Museum</b><br>Via dell\'Archiginnasio 2').openPopup();
+        });
+        </script>
+
         <footer class="footer" id="999">
             <!-- Copyright -->
             <p>&#169; 2025 Copyright: <a href="#">The Evolution of Writing</a></p>
