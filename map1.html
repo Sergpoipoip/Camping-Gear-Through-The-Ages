@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exhibition Layout · Evolution of Writing</title>
+
+  <!-- Bootstrap 5 + your common styles -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/common.css">
+
+  <style>
+  /* ─── GLOBAL COLOUR used for dots & links ─────────────────── */
+  :root{ --crimson:#c43a26; }
+
+  /* ─── GRID: map | list — same height ──────────────────────── */
+  main{
+    display:grid;
+    grid-template-columns: 1fr 340px;   /* map | list */
+    gap:2rem;
+    align-items:start;                  /* top-align both columns */
+  }
+
+  /* left column (image) */
+  #layoutBox{display:flex;}
+  #plan     {display:block; max-width:100%; height:auto; border:2px solid #222;}
+
+  /* right column (title + list fills full height) */
+  #listBox {display:flex; flex-direction:column; height:100%;}
+  #listBox h2{margin:0 0 1rem;}
+
+  /* ordered list spans full height between map top & bottom */
+  #itemList{
+    flex:1 1 auto;
+    margin:0;
+    padding-left:2rem;                  /* a bit more so 2-digit nums fit */
+    list-style:decimal;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;      /* top item = top edge, last = bottom */
+    overflow-y:auto;                    /* scroll only on very short viewports */
+  }
+
+  /* number & link styling */
+  #itemList li::marker {color:var(--crimson); font-weight:700;}
+  #itemList a{
+    color:var(--crimson);
+    text-decoration:none;
+    transition:color .15s;
+  }
+  #itemList a:hover{
+    color:#dd3c34;                      /* slightly darker crimson */
+    text-decoration:underline;
+  }
+  </style>
+</head>
+<body>
+
+<!-- ######## NAVBAR (short version) ################################ -->
+<nav class="navbar navbar-expand-md navbar-light">
+  <div class="container">
+    <a class="navbar-brand fw-semibold d-flex align-items-center gap-2" href="index.html">
+      <img src="imgs/favicon-32x32.png" width="32" height="32" alt="">
+      <span><span id="highlight">Evolution</span> of Writing</span>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#nav" aria-controls="nav" aria-expanded="false">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="nav" class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="narratives.html">Narratives</a></li>
+        <li class="nav-item"><a class="nav-link" href="items.html">Items</a></li>
+        <li class="nav-item"><a class="nav-link" href="timeline.html">Timeline</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" href="#">Map</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="map.html">Geographical map</a></li>
+            <li><a class="dropdown-item active" aria-current="page" href="map1.html">Exhibition layout</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- ################################################################ -->
+
+<main class="container py-4">
+
+  <!-- ◀ Map image -->
+  <div id="layoutBox">
+    <img id="plan" src="imgs/Ex-layout.png" alt="Exhibition hall layout">
+  </div>
+
+  <!-- ▶ Artefact list -->
+  <div id="listBox">
+    <h2>Artefacts</h2>
+    <ol id="itemList">
+      <li><a href="items.html?sid=1">Ishango Bone</a></li>
+      <li><a href="items.html?sid=2">Uruk Beer Rations Tablet</a></li>
+      <li><a href="items.html?sid=3">Palermo Stone</a></li>
+      <li><a href="items.html?sid=4">Oracle Bone Inscriptions</a></li>
+      <li><a href="items.html?sid=5">Linear B Tablet</a></li>
+      <li><a href="items.html?sid=6">Ahiram Sarcophagus</a></li>
+      <li><a href="items.html?sid=7">Gilgamesh Tablet</a></li>
+      <li><a href="items.html?sid=8">Derveni Papyrus</a></li>
+      <li><a href="items.html?sid=9">Rosetta Stone</a></li>
+      <li><a href="items.html?sid=10">Codex Sinaiticus</a></li>
+      <li><a href="items.html?sid=11">Diamond Sutra</a></li>
+      <li><a href="items.html?sid=12">Jikji</a></li>
+      <li><a href="items.html?sid=13">Gutenberg Bible</a></li>
+      <li><a href="items.html?sid=14">Remington No 1 (Typewriter)</a></li>
+      <li><a href="items.html?sid=15">Punch Card</a></li>
+      <li><a href="items.html?sid=16">Unicode Standard (1 .0)</a></li>
+    </ol>
+  </div>
+</main>
+
+<!-- FOOTER -->
+  <footer class="footer" id="999">
+  <!-- Copyright -->
+  <p>&#169; 2025 Copyright: <a href="#">The Evolution of Writing</a></p>
+  <p><i>This is the final project for the course <a href="https://www.unibo.it/it/studiare/dottorati-master-specializzazioni-e-altra-formazione/insegnamenti/insegnamento/2023/454464" target="_blank">Information Modelling and Web Technologies</a>, taught by Professor Fabio Vitali at the University of Bologna during the 2023/2024 academic year, as part of the Master's program in <a href="https://corsi.unibo.it/2cycle/DigitalHumanitiesKnowledge" target="_blank">Digital Humanities and Digital Knowledge</a>.</i></p>
+  <p><a href="documentation.html" target="_blank">The full documentation of the project</a>.</p>
+  <small>Powered by Bootstrap</small>
+  <div class="footer-icon">
+      <a href="https://github.com/Sergpoipoip/From-Clay-Tablet-To-Screen" target="_blank" title="GitHub">
+          <img src="imgs/git.svg" alt="GitHub Icon">
+      </a>
+  </div>        
+  </footer>
+
+<!-- Bootstrap bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
