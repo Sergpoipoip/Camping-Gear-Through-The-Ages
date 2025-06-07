@@ -108,15 +108,40 @@ h1, h2, h3, h4, h5, h6,
 /*-----------------------------------------
 | 5. Up Button & Menu Links
 ------------------------------------------*/
-#upButton {
+/*-----------------------------------------
+| 5.  Back-to-top button
+|     – fixed bottom-right, small size
+------------------------------------------*/
+#upButton{
   position: fixed;
-  bottom: 3vh;
-  right: 3vw;
+  bottom: 2rem;          /*   32 px from bottom   */
+  right : 2rem;          /*   32 px from right    */
+  width : 64px;          /*   button size         */
+  height: 64px;
   opacity: 0;
-  transform: scale(0.5);
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  transform: scale(0.6); /*   hidden state        */
+  transition: opacity .4s ease, transform .4s ease;
+  z-index: 1000;          /* above every normal element */
+  pointer-events: none;
 }
-#upButton.appear { opacity: 1; transform: scale(1); }
+#upButton.appear{        /*   becomes visible     */
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+#upButton:hover{ transform: scale(1.1); }   /* optional pop */
+#upButton:active{ transform: scale(0.9); }
+
+/* mobile phones — make it a bit smaller */
+@media (max-width: 576px){
+  #upButton{
+    bottom: 1.5rem;
+    right : 1.5rem;
+    width : 48px;
+    height: 48px;
+  }
+}
+
 
 #menu-links a {
   font-family: var(--font-family-buttons);
