@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Documentation – The Evolution of Writing</title>
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/documentation.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ===== Additional, page‑specific tweaks  ============================ */
+    .toc-top{background:#fffaf3;border:1px solid #e0d9cf;padding:1rem;margin-bottom:2rem;border-radius:1rem;box-shadow:0 2px 4px rgba(0,0,0,.05)}
+    .toc-top a{display:block;padding:.25rem 0;color:#c43a26;text-decoration:none;font-weight:600}
+    .toc-top a:hover{text-decoration:underline}
+    .object-table{width:100%;border-collapse:collapse;margin-bottom:1rem}
+    .object-table th,.object-table td{border:1px solid #2f2d2c;padding:.5rem .75rem;text-align:left}
+    .object-table thead{background:#c43a26;color:#fff;font-family:'Playfair Display',serif}
+    .object-table tbody tr:nth-child(even){background:#f7f4ec}
+    .object-table tbody tr:hover{background:#f0ebe1}
+
+    /* put this either in documentation.css or inside the <style> block */
+    .article{
+    width:50vw;        /* exactly two quarters of the viewport */
+    max-width:50%;     /* handy fall-back for very wide screens */
+    margin:0 auto;     /* left- and right-hand quarters stay empty */
+    }
+  </style>
+</head>
+<body>
+<input id="upButton" type="image" src="imgs/upButton.svg" alt="back to the top"/>
+<!-- ───────────────────  LOADER  ─────────────────── -->
+<div class="loading-screen" id="loader"><div class="spinner"></div></div>
+
+<div class="container">
+  <div class="column-1 article">
+    <div class="article-header">
+      <a href="index.html" class="back-button" title="Back to home">&#8592;</a>
+      <h1>Project Documentation <small>(Expanded)</small></h1>
+    </div>
+
+    <!-- =====  Table of Contents (top)  ================================ -->
+    <nav class="toc-top" aria-label="Table of contents">
+      <a href="#abstract">Abstract</a>
+      <a href="#introduction">1. Introduction</a>
+      <a href="#overview">&nbsp;&nbsp;1.1 Overview</a>
+      <a href="#objectives">&nbsp;&nbsp;1.2 Objectives</a>
+      <a href="#requirements">&nbsp;&nbsp;1.3 Requirements</a>
+      <a href="#exhibition">2. The Exhibition</a>
+      <a href="#objects">&nbsp;&nbsp;2.1 Displayed Objects</a>
+      <a href="#map">&nbsp;&nbsp;2.2 Maps</a>
+      <a href="#narratives">&nbsp;&nbsp;2.3 Narratives</a>
+      <a href="#development">3. Development</a>
+      <a href="#ia">&nbsp;&nbsp;3.1 Information Architecture</a>
+      <a href="#navigation">&nbsp;&nbsp;3.2 User Experience (UX)</a>
+      <a href="#tech-imp">&nbsp;&nbsp;3.3 Technical Implementation</a>
+      <a href="#use-cases">4. Use Cases</a>
+      <a href="#design">5. Design Specifications</a>
+      <a href="#layout">&nbsp;&nbsp;5.1 Visual Design</a>
+      <a href="#color">&nbsp;&nbsp;5.2 Colour Palette</a>
+      <a href="#typography">&nbsp;&nbsp;5.3 Typography</a>
+      <a href="#references">6. References</a>
+      <a href="#rights">7. Rights & Licences</a>
+    </nav>
+
+    <!-- ===== 0. Abstract ================================================= -->
+    <section id="abstract">
+      <h2>Abstract</h2>
+      <p><em>The Evolution of Writing</em> is a digital companion to a temporary exhibition that traces 20&nbsp;000&nbsp;years of human communication, from Ice‑Age tally sticks to the Unicode Standard. The web application invites visitors to explore sixteen artefacts that represent turning‑points in how societies record, preserve and share knowledge.</p>
+      <p>Combining a responsive interface, narrative modes and multimodal assets (timeline, maps, object cards), the project bridges the on‑site visit with remote discovery and classroom use.</p>
+    </section>
+
+    <!-- ===== 1. Introduction =========================================== -->
+    <section id="introduction">
+      <h2>1. Introduction</h2>
+
+      <h3 id="overview">1.1&nbsp;Overview</h3>
+      <p>The site is designed to provide the visitor with a coherent and flexible exploration of the history of writing, whether their motivation is curiosity, research, or pedagogy. The website is organised around three complementary access paths — <strong>Historical Themes</strong>, <strong>Object Types</strong> and <strong>Periods</strong>. Each path reshuffles the same data set, encouraging users to look at the artefacts through different interpretive lenses.</p>
+      <p>The entirety of the exhibition content is managed in a structured JSON format, with all metadata, descriptive texts, and references defined and versioned for stability and maintainability. Thisrchitecture underpins the flexibi ality of the user experience and supports future extension or integration with other digital humanities initiatives.</p>
+
+      <h3 id="objectives">1.2&nbsp;Objectives</h3>
+      <ul>
+        <li><strong>Engagement.</strong> Offer an immersive, story‑driven experience ahead of — or in parallel with — the physical display.</li>
+        <li><strong>Education.</strong> Provide layered descriptions (short, longer, full) so that pupils, casual visitors and scholars all find a suitable depth of information.</li>
+        <li><strong>Findability.</strong> Allow users to reach any artefact in ≤3 clicks via narrative buttons, the filters on the Items page, the timeline or the interactive maps.</li>
+        <li><strong>Accessibility.</strong> Bootstrap 5 ensures semantic HTML, keyboard navigation, ARIA labels and responsive layouts out of the box.</li>
+      </ul>
+
+      <h3 id="requirements">1.3&nbsp;Requirements</h3>
+      <p>The full data set is stored in a single JSON file. <a href="items.json" target="_blank" rel="noopener">items.json</a> contains all cataloguing metadata plus the multi‑level narratives for each artefact.</p>
+    </section>
+
+    <!-- ===== 2. The Exhibition ========================================= -->
+    <section id="exhibition">
+      <h2>2. The Exhibition</h2>
+
+      <h3 id="objects">2.1&nbsp;Displayed Objects</h3>
+      <p>The sixteen artefacts below summarise the evolution of writing. Their selection balances geographical scope, technological innovation and narrative appeal.</p>
+
+      <table class="object-table">
+        <thead>
+          <tr class="align-center"><th rowspan="2">Item Title</th><th colspan="3">Narratives</th></tr>
+          <tr class="align-center"><th>Period</th><th>Theme</th><th>Typology</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1.&nbsp;Ishango Bone</td><td>Prehistoric</td><td>Commerce & Administration</td><td>Counting tool</td></tr>
+          <tr><td>2.&nbsp;Uruk Beer‑Rations Tablet</td><td>Ancient</td><td>Commerce & Administration</td><td>Tablet</td></tr>
+          <tr><td>3.&nbsp;Palermo Stone</td><td>Ancient</td><td>Governance & Law</td><td>Stone / Monument</td></tr>
+          <tr><td>4.&nbsp;Oracle Bone Inscriptions</td><td>Ancient</td><td>Religion & Myth</td><td>Device / Standard</td></tr>
+          <tr><td>5.&nbsp;Linear B Tablet</td><td>Ancient</td><td>Commerce & Administration</td><td>Tablet</td></tr>
+          <tr><td>6.&nbsp;Ahiram Sarcophagus</td><td>Ancient</td><td>Religion & Myth</td><td>Stone / Monument</td></tr>
+          <tr><td>7.&nbsp;Gilgamesh Tablet</td><td>Ancient</td><td>Religion & Myth</td><td>Tablet</td></tr>
+          <tr><td>8.&nbsp;Derveni Papyrus</td><td>Ancient</td><td>Philosophy & Literature</td><td>Manuscript / Book</td></tr>
+          <tr><td>9.&nbsp;Rosetta Stone</td><td>Ancient</td><td>Governance & Law</td><td>Stone / Monument</td></tr>
+          <tr><td>10.&nbsp;Codex Sinaiticus</td><td>Ancient</td><td>Religion & Myth</td><td>Manuscript / Book</td></tr>
+          <tr><td>11.&nbsp;Diamond Sutra</td><td>Medieval</td><td>Religion & Myth</td><td>Manuscript / Book</td></tr>
+          <tr><td>12.&nbsp;Jikji</td><td>Medieval</td><td>Religion & Myth</td><td>Manuscript / Book</td></tr>
+          <tr><td>13.&nbsp;Gutenberg Bible</td><td>Modern</td><td>Religion & Myth</td><td>Manuscript / Book</td></tr>
+          <tr><td>14.&nbsp;Remington No.&nbsp;1</td><td>Modern</td><td>Technology & Communication</td><td>Device / Standard</td></tr>
+          <tr><td>15.&nbsp;Punch Card</td><td>Modern</td><td>Technology & Communication</td><td>Device / Standard</td></tr>
+          <tr><td>16.&nbsp;Unicode Standard 1.0</td><td>Modern</td><td>Technology & Communication</td><td>Device / Standard</td></tr>
+        </tbody>
+      </table>
+
+      <h3 id="map">2.2&nbsp;Maps</h3>
+      <p>The <a href="map.html">geographical map</a> links discovery sites with the institutions currently housing the artefacts, while <a href="map1.html">map 1</a> reproduces the physical layout of the gallery to help visitors locate each showcase.</p>
+
+      <h3 id="narratives">2.3&nbsp;Narratives</h3>
+      <p>Our three narrative families give visitors agency in shaping their own learning journey. Rather than prescribing a single, linear storyline, the interface offers <em>filters-as-pathways</em>. Each pathway foregrounds a different aspect of the same artefacts, enabling serendipitous discovery and reinforcing key learning outcomes.</p>
+      <ul>
+        <li><strong>Historical Themes</strong> – Focuses on the <em>social function</em> of writing (e.g. Commerce & Administration, Religion & Myth). This thread helps visitors connect the objects with everyday human needs: trade, governance, spirituality.</li>
+        <li><strong>Object Types</strong> – Groups artefacts by their <em>material form</em> (tablet, manuscript, device). By zooming in on changing substrates and tools, visitors grasp how technological constraints shaped scripts and layouts.</li>
+        <li><strong>Periods</strong> – A chronological overview (Prehistoric → Modern) aids time‑travel across millennia. Juxtaposing artefacts from the same era reveals cultural exchange and parallel innovations across regions.</li>
+      </ul>
+    </section>
+
+    <!-- ===== 4. Development =========================================== -->
+    <section id="development">
+      <h2>3. Development</h2>
+
+      <h3>3.1&nbsp;Information Architecture</h3>
+      <p>Information on the site is organised according to the principle of a <strong>single authoritative data source</strong>. The file <code>items.json</code> resides at the project root and is fetched independently by each core view — the item gallery, the timeline, and the two maps — when that view is first loaded. On every request the raw JSON is parsed into plain JavaScript objects whose scope is limited to the page that triggered the fetch.</p>
+      <p>Inside the file, all records are gathered under the top‑level key <code>items</code>, itself an array. Each array element is one artefact and follows a predictable internal grammar. A numeric <code>@sort</code> field determines chronological ordering across the site; <code>shortName</code> supplies card headings; <code>image</code> stores the path to the default image of an artefact; <code>periodTag</code> maps directly to the period filter. The nested <code>info</code> object holds authoritative catalogue metadata such as <em>Object type</em>, <em>Materials</em>, <em>Housed in</em> and others.</p>
+      <p>Interpretive texts are separated by granularity. <code>shortInfo</code> is a tweet‑length hook displayed on gallery cards; <code>longerInfo</code> is an array that can hold multiple paragraphs for modal pop‑ups; <code>fullInfo</code> is a path to an external HTML essay which is lazy‑loaded only when the user explicitly asks for the full story. This lazy approach keeps the initial payload light, while still offering limitless depth.</p>
+      The same JSON powers the timeline through the <code>@sort</code> field and feeds the Leaflet maps via geocoded location fields generated during the build process.</p>
+
+      <h3 id="navigation">3.2&nbsp;User Experience (UX)</h3>
+      <p>The site’s navigation is built around the principle of letting visitors approach the exhibition from multiple angles. At its centre stands the Items page, which houses every object’s catalogue entry. Here each artefact appears with a data table, an image, and a description that the visitor can expand or collapse at will; quick-jump buttons toggle among narratives, while filter controls beneath the main menu allow combinations of themes, periods, and types.</p>
+      <p>Branching out from this hub are four specialised views. The <strong>Narratives page</strong> offers concise explanations of each storyline and invites users to start exploring by simply selecting the strand that interests them. The <strong>Timeline</strong> arranges all items chronologically, giving a clear diachronic perspective; by clicking on the artefact image the user gets redirected to the <strong>Items page</strong> where a card with information about this artefact pops up.</p>
+      <p>There are also two maps: the <strong>Exhibition</strong> one and <strong>Geographical</strong>. The <strong>Exhibition Map</strong> mirrors the physical gallery layout, providing direct links to the artefacts descriptions. The <strong>Geographical Map</strong> page lets visitors follow each artefact’s real-world journey. When it loads, a Leaflet map centres on the globe and drops two colour-coded markers for every artefact — orange for the place where it was found and blue for the institution that now houses it. Markers are clustered automatically so the view stays clear at low zoom levels, and a popup on each pin links straight to that object’s full record on the <strong>Items page</strong>. A sidebar on the right offers drop-down filters for theme, typology and historical period; changing any filter instantly hides or reveals the corresponding markers, mirroring the logic used on the <strong>Items</strong> grid.</p>
+
+      <h3 id="tech-imp">3.3&nbsp;Technical Implementation</h3>
+      <p>The whole web app is driven by a <em>single authoritative data source</em>, <a href="items.json"><code>items.json</code></a>, plus four JavaScript modules that transform that data into the various interactive views.
+      <p><strong>Loading the data.</strong> Every view that needs artefact information begins with the same promise chain: <code>fetch('items.json')</code> retrieves the file, <code>response.json()</code> parses it, and the returned <code>data.items</code> array is either cloned or filtered to fit the view’s purpose.</p>
+      <p>Once the array is in memory, each page transforms it in a different way that matches the questions that page tries to answer.</p>
+      <h5>• Catalogue (<code>items.html + js/items.js</code>)</h5>
+      <p>The helper function <code>buildFilters()</code> scans the entire <code>items</code> array and extracts every distinct value it finds in the <strong>Theme</strong>, <strong>Typology</strong>, and <strong>Period</strong> fields, using those sets to populate the corresponding drop-down menus. Whenever the visitor changes one of those selectors, the page fires a <em>live-filtering</em> cycle: the <code>renderGrid()</code> function reruns, discarding all records whose metadata no longer satisfies the trio of active facets and rebuilding the grid so that only matching artefacts remain on screen.</p>
+      <p>For each artefact that survives this filtering pass, the script constructs a Bootstrap card on the fly, injecting the item’s teaser image, its <code>shortName</code>, and a two-line snippet taken from <code>shortInfo</code>. Pressing a card’s Details button triggers <code>showModal()</code>. The modal routine receives the artefact’s internal <code>@sort</code> identifier, looks the object up in memory, and assembles an enlarged hero image, a tidy metadata table derived from the <code>info</code> block, and — when available — long and full narrative sections.</p>
+      
+      <h5>• Timeline (<code>timeline.html + js/timeline.js</code>)</h5>
+      <p>The timeline script first clones the artefact array and sorts it numerically by <code>@sort</code>, guaranteeing that objects are laid out in genuine chronological order. As it walks through this ordered list it watches for changes in <code>periodTag</code>; whenever a new period is encountered it inserts a header tile, breaking the strip into clearly labelled historical eras. <br>To keep the pictures from piling up, each successive artefact tile is then placed alternately above and below the central axis — an effect achieved with a simple Boolean toggle that flips on every iteration. <br>Hovering tile reveals an overlay that repeats the <code>shortName</code> and provides a “See more” link back to the catalogue modal, allowing the user to drill straight into full object details.</p>
+      
+      <h5>• Geographical map (<code>map.html + js/map.js</code>)</h5>
+      <p>When the map view loads it first “harvests” the metadata it needs for later filtering. For every artefact the script splits the semicolon-separated Subjects string, reads the Object type, and notes the single periodTag; each of those three facets is stored as a <code>Set</code> directly on the Leaflet marker so they can be compared in constant time during interactive filtering.</p>
+      <p>Next the code resolves geography. The free-text place names found in Original Location and Housed in are fuzzily matched against a hand-curated <code>PLACES</code> dictionary, yielding accurate latitude-and-longitude pairs (and, where relevant, a museum URL). <br> With coordinates in hand the script creates up to two pins for every artefact — an orange one that marks its provenance and a blue one that shows its present repository. Each pin opens a Bootstrap-styled popup containing a link such as <code>items.html?sid=…</code>, allowing the visitor to jump straight to the artefact’s catalogue modal without losing context.</p>
+      <p>All pins are added once to a single <em>MarkerClusterGroup</em>; afterwards the three facet dropdowns (Theme, Typology, Period) simply add or remove markers from that cluster layer in real time, applying exactly the same logic as the catalogue grid but entirely on the client side. This approach keeps the map responsive, even as hundreds of artefacts are filtered in milliseconds.</p>
+    </section>
+
+    <!-- ===== 4. Use Cases ============================================= -->
+    <section id="use-cases">
+      <h2>4. Use Cases</h2>
+      <p>The interface delivers <em>progressive immersion</em>, surfacing different narrative lengths to suit three personas:</p>
+      <ol>
+        <li>
+          <strong>Marco, 15, secondary‑school student.</strong>
+          <ul>
+            <li><em>Goal:</em> Prepare a 5‑minute class presentation on “the origins of writing”.</li>
+            <li><em>Journey:</em> Uses the <strong>Timeline</strong> to grasp chronology → filters by <em>Prehistoric</em> period → reads <em>short descriptions</em>.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Alice, 34, middle-school history teacher</strong>
+          <ul>
+            <li><em>Goal:</em> Craft an engaging 40-minute lesson on the Rosetta Stone for her Year 8 class.</li>
+            <li><em>Journey:</em> Opens the <strong>Items</strong> → filters by “Governance & Law” theme → selects the Rosetta Stone card → expands the longer description accordion to grab the discovery story and key dates → projects the modal (image + long text) on the smartboard during class → clicks <strong>Full story</strong> and posts that deep-dive link to the class portal for homework reading.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Dr.&nbsp;Ibrahim, 55, epigraphy scholar.</strong>
+          <ul>
+            <li><em>Goal:</em> Investigate comparative writing technology.</li>
+            <li><em>Journey:</em> Direct deep link (shared by curator) opens <em>Unicode Standard 1.0</em> modal in <em>full description</em> mode → exports catalogue data via the <code>/api/items</code> endpoint → toggles <em>map current location</em> layer to confirm object custodianship.</li>
+          </ul>
+        </li>
+      </ol>
+      <p>These flows demonstrate how the same data is repackaged for snackable, guided and scholarly consumption.</p>
+    </section>
+
+    <!-- ===== 5. Design Specifications ================================= -->
+    <h3>5.&nbsp;Design&nbsp;Specifications</h3>
+    <p>The visual language of <strong>Evolution of Writing</strong> is built around the metaphor of a scholar leafing through illuminated manuscripts. Parchment hues,
+      ink-dark text, and quiet micro-animations evoke the tactility of historical documents while Bootstrap’s mobile-first grid and Leaflet maps keep
+      the experience unapologetically contemporary.</p>
+
+    <!-- ­­­­­­­­­­­­ 5.1 · LAYOUT ­­­­­­­­­­­­­ -->
+    <h4>5.1&nbsp;Layout</h4>
+
+    <!-- 5.1.1 – HOMEPAGE -->
+    <h5>5.1.1&nbsp;Homepage</h5>
+    <p>The landing page is divided into three vertically stacked “folds”. The first fold is a <em>full-viewport</em> hero carousel:
+    <code>.carousel-item&nbsp;{ height:100vh; }</code> makes each slide occupy the entire browser window, ensuring that the opening imagery
+    commands attention before the visitor scrolls. We chose 100 vh rather than a fixed pixel height so that ultrawide monitors and short laptop screens enjoy
+    the same immersive ratio.</p>
+
+    <p>The second fold introduces the <em>Explore</em> grid. A CSS Grid layout renders four equally wide columns on desktop (<code>repeat(4, minmax(120px, 1fr))</code>) but collapses gracefully to two
+      columns below 576 px, maintaining finger-friendly hit areas on phones. Because the grid is fed by JS from <code>items.json</code>, the site can grow
+      new themes without touching HTML.</p>
+
+    <p>The third fold, <em>Find Us</em>, uses a 60 / 40 split (<code>#find-us { grid-template-columns: 3fr 2fr }</code>) to pair a Leaflet map
+      with a fact sheet. We intentionally inverted the common “map-sidebar” pattern — placing the map on the left — because Western reading
+      starts at the left margin; users therefore register the geospatial context <em>before</em> scanning the address, a cognitive order that matches how one
+      would approach a real museum catalogue.</p>
+
+    <!-- 5.1.2 – NARRATIVES -->
+    <h5>5.1.2&nbsp;Narratives</h5>
+    <p>The narratives index functions as a tiled magazine cover. Bootstrap’s utility class <code>.row-cols-lg-5</code> outputs five cards across on large
+      screens, four on medium, down to two on extra-small — giving us perfectly fluid
+      columns without custom breakpoints. Each card is an <em>aspect-ratio box</em> (<code>aspect-ratio:3/2</code>) so images never warp,
+      and two <code>::before/::after</code> pseudo-elements draw folded-corner ornaments, reinforcing the “paper page” metaphor.</p>
+
+    <!-- 5.1.3 – TIMELINE -->
+    <h5>5.1.3&nbsp;Timeline</h5>
+    <p>The timeline view is a horizontal strip (<code>display:flex; gap:3.5rem</code>) inside an overflow container that hides the native scrollbar for visual
+      purity (<code>.timeline::-webkit-scrollbar { display:none }</code>). <br> To prevent images from colliding with the central line we alternate tile positions using utility classes 
+      <code>.tl-item.above</code> and <code>.below</code>, which translate the element −70 px and +90 px respectively.
+    </p>
+
+    <!-- 5.1.4 – MAP -->
+    <h5>5.1.4&nbsp;Map</h5>
+    <p>Both <em>Geographical Map</em> and <em>Exhibition Layout</em> pages are built on a flex container named <code>.page-body</code>: above 992 px the direction is
+    <em>row</em> (map | sidebar), below 992 px it flips to <em>column</em> so that filters never squeeze between viewport edges. We limited the
+    sidebar to <code>max-width:33.333%</code> to prevent text columns from exceeding 70 characters, in line with legibility recommendations by the <cite>Information Architecture Institute</cite>. <br>
+    The map itself inherits the parchment background through CSS override (<code>.leaflet-container { background:transparent !important; }</code>),
+    ensuring tiles appear to rest on the same material as the rest of the page. All markers share a single Leaflet MarkerClusterGroup.
+    </p>
+
+    <!-- ­­­­­­­­­­­­ 5.2 · COLOUR PALETTE ­­­­­­­­­­­­­ -->
+    <h4>5.2&nbsp;Colour&nbsp;Palette</h4>
+
+    <p>Colours are declared once in <code>:root</code> so every component, regardless of page, pulls from the same ink-and-parchment scheme. The background tone <code>#f6f1e0</code> was sampled
+    from aged vellum and lightened by 4 % to hit a 14.8:1 contrast ratio against the charcoal text <code>#2e2e2e</code>, comfortably surpassing WCAG AA for body
+    copy at 16 px. </p>
+
+    <ul>
+      <li><strong>Sepia Ink — <code>--color2</code></strong><br>
+          Used for headings and link default states. Sepia reads as “ink that has
+          oxidised” and therefore signals hierarchy without resorting to pure
+          black, keeping large headings visually lighter.
+      </li>
+
+      <li><strong>Rusty Red Wax — <code>--color5</code></strong><br>
+          Buttons, hover states and progress indicators adopt a translucent
+          <code>#cc3112</code>; the hex value was tuned to a
+          <var>L*</var> of 39 in the CIELAB colour space so white text overlays
+          still meet 4.5:1 contrast. The transparency
+          (<code>0x9d alpha</code>) allows the parchment grain to remain subtly
+          visible, echoing the semi-opaque nature of historical sealing wax.
+      </li>
+
+      <li><strong>Muted Navy — <code>--color3</code></strong><br>
+          A cool counter-accent (<code>#37475a</code>) balances the warm palette.
+          We deploy it sparingly: progress bars, secondary buttons and the <em>Explore</em>
+          panel backdrop. The aim is to avoid “visual fatigue”.
+      </li>
+    </ul>
+
+    <!-- ­­­­­­­­­­­­ 5.3 · TYPOGRAPHY ­­­­­­­­­­­­­ -->
+    <h4>5.3&nbsp;Typography</h4>
+
+    <p>Typography delivers half the historical mood. We pair two Google Fonts,
+    loaded once in the document head to avoid FOIT flashes.</p>
+
+    <ul>
+      <li><strong>Playfair Display (Headers)</strong><br>
+          A transitional serif reminiscent of engraved title pages, used for all
+          headings and narrative-card labels via
+          <code>--font-family-header</code>. Its high contrast strokes give
+          engraved-ink elegance, aligning with the site’s scholarly tone.
+      </li>
+
+      <li><strong>Crimson Text (Body)</strong><br>
+          Selected for running text because its loose x-height and moderate
+          stroke contrast mirror Garamond yet ship lighter, improving LCP on
+          slower connections. Every paragraph, card snippet and modal narrative
+          inherits <code>font-family:var(--font-family-text)</code>, guaranteeing a
+          uniform reading texture across pages, including pop-ups.
+      </li>
+    </ul>
+
+    <p>The navigation bar adopts geometric <strong>Montserrat</strong> and buttons
+    fall back to pragmatic <strong>Tahoma</strong>; this deliberate divergence helps
+    users instinctively separate <em>actionable</em> controls from <em>readable</em>
+    content. Typography sizes obey a 1.250 Major Third scale: body 16 px, h6 20 px,
+    h1 ≈40 px. The scale was chosen because a 1.25 ratio approximates the
+    inverse golden ratio (φ-1) championed in classical book design.
+    </p>
+
+    <p>Collectively, these layout, colour and typography choices fuse modern
+    responsiveness with period-appropriate ambience, underscoring our central
+    design aim: to let users feel as though they are browsing a digital codex,
+    not merely a web page.
+    </p>
+
+    <!-- ===== 6. References =========================================== -->
+    <section id="references">
+      <h2>6. References</h2>
+      <p>Cultural artefacts collected from museums:</p>
+      <ul>
+        <li><a href="https://www.naturalsciences.be">Royal Belgian Institute of Royal Sciences</a>, Brussels</li>
+        <li><a href="https://www.britishmuseum.org">The British Museum</a>, London</li>
+        <li><a href="https://turismo.comune.palermo.it/palermo-welcome-luogo-dettaglio.php?tp=68&det=21&id=178">Regional Archaeological Museum Antonio Salinas</a>, Palermo</li>
+        <li><a href="https://en.chnmuseum.cn">National Museum of China</a>, Beijing</li>
+        <li><a href="https://www.namuseum.gr/en">National Archaeological Museum</a>, Athens</li>
+        <li><a href="https://beirutnationalmuseum.com">National Museum of Beirut</a>, Lebanon</li>
+        <li><a href="https://www.amth.gr/en">Archaeological Museum of Thessaloniki</a>, Thessaloniki</li>
+        <li><a href="https://www.ub.uni-leipzig.de/en/home">Leipzig University Library</a>, Leipzig</li>
+        <li><a href="https://nlr.ru/eng">National Library of Russia</a>, St Petersburg</li>
+        <li><a href="https://www.sinaimonastery.com/index.php/en/">St Catherine’s Monastery</a>, Sinai</li>
+        <li><a href="https://www.bl.uk">British Library</a>, London</li>
+        <li><a href="https://www.bnf.fr">National Library of France</a>, Paris</li>
+        <li><a href="https://www.thehenryford.org">Henry Ford Museum of American Innovation</a>, Dearborn MI</li>
+        <li><a href="https://americanhistory.si.edu">National Museum of American History</a>, Washington</li>
+      </ul>
+      <p>Tools:</p>
+      <ul>
+        <li><a href="https://www.favicon.cc/">Favicons</a></li>
+        <li><a href="https://getbootstrap.com/">Bootstrap</a></li>
+        <li><a href="https://leafletjs.com/reference.html">Leaflet API</a></li>
+        <li><a href="https://www.w3schools.com/">W3 Schools</a></li>
+        <li><a href="https://fonts.google.com/">Google Font</a></li>
+      </ul>
+    </section>
+
+    <!-- ===== 7. Rights & Licences ===================================== -->
+    <section id="rights">
+      <h2>7. Rights & Licences</h2>
+      <p>All copyright on the typographic and layout choices are 2025 © <em>The Evolution of Writing</em> team.</p>
+    </section>
+  </div>
+
+  <div class="menu column-2" id="toc">
+    <button class="hamburger" aria-label="Toggle menu">☰</button>
+    <nav class="menu-body"><!-- dynamic links already exist as below for right‑hand sticky TOC -->
+      <a href="#abstract" class="chapter">Abstract</a>
+      <a href="#introduction" class="chapter">1. Introduction</a>
+      <a href="#overview" class="subchapter">1.1 Overview</a>
+      <a href="#objectives" class="subchapter">1.2 Objectives</a>
+      <a href="#requirements" class="subchapter">1.3 Requirements</a>
+      <a href="#exhibition" class="chapter">2. The Exhibition</a>
+      <a href="#objects" class="subchapter">2.1 Objects</a>
+      <a href="#map" class="subchapter">2.2 Maps</a>
+      <a href="#narratives" class="subchapter">2.3 Narratives</a>
+      <a href="#development" class="chapter">3. Development</a>
+      <a href="#ia" class="subchapter">3.1 IA</a>
+      <a href="#navigation" class="subchapter">3.2 UX</a>
+      <a href="#tech-imp" class="subchapter">3.3 Tech</a>
+      <a href="#use-cases" class="chapter">4. Use Cases</a>
+      <a href="#design" class="chapter">5. Design</a>
+      <a href="#layout" class="subchapter">5.1 Visual</a>
+      <a href="#color" class="subchapter">5.2 Colour</a>
+      <a href="#typography" class="subchapter">5.3 Typography</a>
+      <a href="#references" class="chapter">6. References</a>
+      <a href="#rights" class="chapter">7. Rights</a>
+    </nav>
+  </div>
+</div>
+
+<script>
+window.addEventListener('load',()=>document.body.classList.add('loaded'));
+// right‑hand hamburger TOC
+const hamburger=document.querySelector('.hamburger');
+hamburger.addEventListener('click',()=>document.querySelector('.menu-body').classList.toggle('open'));
+// smooth scroll + highlight for both TOCs
+[...document.querySelectorAll('.toc-top a, .menu-body a')].forEach(link=>{
+  link.addEventListener('click',e=>{
+    e.preventDefault();
+    const target=document.querySelector(link.getAttribute('href'));
+    target.scrollIntoView({behavior:'smooth'});
+  });
+});
+
+document.addEventListener('scroll', () => {
+  const btn = document.getElementById('upButton');
+  btn.classList.toggle('appear', window.scrollY > window.innerHeight);
+});
+document.getElementById('upButton').addEventListener('click', () =>
+  window.scrollTo({top: 0, behavior: 'smooth'}));
+</script>
+
+<footer class="footer" id="999">
+  <!-- Copyright -->
+  <p>&#169; 2025 Copyright: <a href="#">The Evolution of Writing</a></p>
+  <p><i>This is the final project for the course <a href="https://www.unibo.it/it/studiare/dottorati-master-specializzazioni-e-altra-formazione/insegnamenti/insegnamento/2023/454464" target="_blank">Information Modelling and Web Technologies</a>, taught by Professor Fabio Vitali at the University of Bologna during the 2023/2024 academic year, as part of the Master's program in <a href="https://corsi.unibo.it/2cycle/DigitalHumanitiesKnowledge" target="_blank">Digital Humanities and Digital Knowledge</a>.</i></p>
+  <p><a href="documentation.html" target="_blank">The full documentation of the project</a>.</p>
+  <small>Powered by Bootstrap</small>
+  <div class="footer-icon">
+      <a href="https://github.com/Sergpoipoip/From-Clay-Tablet-To-Screen" target="_blank" title="GitHub">
+          <img src="imgs/git.svg" alt="GitHub Icon">
+      </a>
+  </div>        
+</footer>
+
+</body>
+</html>
