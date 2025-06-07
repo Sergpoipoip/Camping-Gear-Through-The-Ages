@@ -17,7 +17,7 @@
 				"Subjects": "Commerce & Administration" 
 			},
 			"shortInfo": "Ice‑Age tally stick offering one of humanity’s earliest numeric records.", 
-			"longerInfo": ["A 20 000‑year‑old bone from DR Congo whose three neat columns of notches are widely read as arithmetic tallies, showing that symbolic counting—and the mental step toward writing—predated agriculture and cities by millennia."],
+			"longerInfo": ["A 20 000‑year‑old bone from DR Congo whose three neat columns of notches are widely read as arithmetic tallies, showing that symbolic counting — and the mental step toward writing — predated agriculture and cities by millennia."],
 			"fullInfo": "items_descriptions/ishangoBone.html"
 		},
 		{
@@ -37,7 +37,7 @@
 				"Subjects": "Religion & Myth" 
 			},
 			"shortInfo": "The single most famous cuneiform text that caused a sensation when its content was first read in the 19th century", 
-			"longerInfo": ["This artifact is the most renowned cuneiform inscription ever discovered. Its translation in the 19th century sparked great excitement due to its striking parallels with the biblical Flood narrative in Genesis. The tablet, made of baked clay, bears the Babylonian version of the Great Flood story."],
+			"longerInfo": ["This artefact is the most renowned cuneiform inscription ever discovered. Its translation in the 19th century sparked great excitement due to its striking parallels with the biblical Flood narrative in Genesis. The tablet, made of baked clay, bears the Babylonian version of the Great Flood story."],
 			"fullInfo": "items_descriptions/gilgamesh.html"
 		},
 		{
@@ -178,7 +178,7 @@
 				"Findspot": "Tomb A, Derveni necropolis, near Thessaloniki, Greece",
 				"Subjects": "Philosophy & Literature" 		
 			},
-			"shortInfo": "Europe’s oldest surviving ‘book’—a charred Greek papyrus scroll saved from a 4th‑century BCE tomb.",
+			"shortInfo": "Europe’s oldest surviving ‘book’ — a charred Greek papyrus scroll saved from a 4th‑century BCE tomb.",
 			"longerInfo": ["Found in 1962 near Thessaloniki, the Derveni Papyrus preserves 26 columns of commentary on an Orphic poem, making it the earliest physical witness to Greek philosophical exegesis and proof that papyrus books circulated well beyond Egypt."],
 			"fullInfo": "items_descriptions/derveni.html"
 		},
@@ -198,7 +198,7 @@
 				"Findspot": "St Catherine’s Monastery, Sinai, Egypt",
 				"Subjects": "Religion & Myth" 		
 			},
-			"shortInfo": "The earliest nearly complete Bible—an enormous 4th‑century parchment codex that still holds the oldest full Greek New Testament.",
+			"shortInfo": "The earliest nearly complete Bible — an enormous 4th‑century parchment codex that still holds the oldest full Greek New Testament.",
 			"longerInfo": ["Copied c. 350 CE and rediscovered at Sinai in 1844, Codex Sinaiticus shows how early Christians harnessed the new codex format to bind an entire Bible, and its meticulously corrected text underpins every modern critical edition."],
 			"fullInfo": "items_descriptions/codex-sinaiticus.html"
 		},
@@ -278,7 +278,7 @@
 				"Findspot": "-",
 				"Subjects": "Technology & Communication" 		
 			},
-			"shortInfo": "The first commercially successful typewriter—its QWERTY keys launched modern typing.",
+			"shortInfo": "The first commercially successful typewriter — its QWERTY keys launched modern typing.",
 			"longerInfo": ["Introduced by Remington in 1874, the Sholes & Glidden bound letters to levers, letting clerks hammer words faster than any pen and setting the keyboard pattern that still marches across laptops today."],
 			"fullInfo": "items_descriptions/typewriter.html"
 		},
@@ -318,7 +318,7 @@
 				"Findspot": "-",
 				"Subjects": "Technology & Communication" 		
 			},
-			"shortInfo": "The first universal character codebook—Unicode 1.0 bound 7,129 characters from 24 scripts into two printed volumes.",
+			"shortInfo": "The first universal character codebook — Unicode 1.0 bound 7,129 characters from 24 scripts into two printed volumes.",
 			"longerInfo": ["Issued by the Unicode Consortium in 1991–92, these Addison-Wesley tomes replaced clashing computer code pages with a single 16-bit repertoire, opening the door to seamless digital text in every writing system."],
 			"fullInfo": "items_descriptions/unicode.html"
 		}

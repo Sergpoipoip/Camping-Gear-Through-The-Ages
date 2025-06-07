@@ -40,8 +40,7 @@
   const ICON_CURR = makeIcon('blue');
 
   /* ────────────── 3 · CO-ORD DICTIONARY ───────────── */
-  /* One entry for every distinct place string occurring in items.json.
-     (You can add more without touching the code.)                        */
+  /* One entry for every distinct place string occurring in items.json. */
   const PLACES = {
     /* Prehistoric & Ancient */
     "Ishango, DR Congo, Africa":                    {lat:  1.466, lng: 29.200},

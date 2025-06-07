@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="imgs/favicon-32x32.png">
-    <script src="java/java.js"></script>
     <title>Evolution of Writing</title>
 
     <!-- Google CSS -->
@@ -120,7 +119,7 @@
                     <div id="part-1">
                         <h2>The Project</h2>
                         <p>Welcome to <b><i>The Evolution of Writing</i></b>, a project that tells the history of writing through several items related to key stages in the development of writing.</p>
-                        <p>On this website you can explore 5,000 years of human communication through 20 iconic artifacts — from ancient Mesopotamian cuneiform to the digital emoji. This interactive exhibition traces how writing shaped civilizations, featuring rare manuscripts, the Gutenberg Bible, and the first computer code. Discover stories of scribes, inventors, and rebels who transformed how we record thought.</p>
+                        <p>On this website you can explore 5,000 years of human communication through 20 iconic artefacts — from ancient Mesopotamian cuneiform to the digital emoji. This interactive exhibition traces how writing shaped civilizations, featuring rare manuscripts, the Gutenberg Bible, and the first computer code. Discover stories of scribes, inventors, and rebels who transformed how we record thought.</p>
                     </div>
                     <div id="part-2">
                         <h2>Disclaimer</h2>
@@ -129,7 +128,7 @@
                     </div>
                     <div id="part-3">
                         <h2>Discover the exhibition</h2>
-                        <p>The exposition traces humanity’s 20 000-year quest to capture thought in lasting marks. The exhibition gathers 16 pivotal artifacts — from Paleolithic tally bones and Sumerian cuneiform tablets, through codices and the first printed books, to the typewriter and character codebook. Each object represents a breakthrough in medium (stone, parchment, paper) or method (pictograph, alphabet, movable type, digital code), letting visitors see — and touch — the technological, social, and artistic leaps that shaped how we record knowledge. Together the pieces reveal writing’s evolution as a continuous conversation between ideas, materials, and the human urge to communicate across time.</p>
+                        <p>The exposition traces humanity’s 20 000-year quest to capture thought in lasting marks. The exhibition gathers 16 pivotal artefacts — from Paleolithic tally bones and Sumerian cuneiform tablets, through codices and the first printed books, to the typewriter and character codebook. Each object represents a breakthrough in medium (stone, parchment, paper) or method (pictograph, alphabet, movable type, digital code), letting visitors see — and touch — the technological, social, and artistic leaps that shaped how we record knowledge. Together the pieces reveal writing’s evolution as a continuous conversation between ideas, materials, and the human urge to communicate across time.</p>
                         </br>
                     </div>
                 </div>
@@ -196,6 +195,13 @@
           L.marker([44.4920, 11.3438]).addTo(map)
           .bindPopup('<b>Archaelogical Museum</b><br>Via dell\'Archiginnasio 2').openPopup();
         });
+
+        document.addEventListener('scroll', () => {
+          const btn = document.getElementById('upButton');
+          btn.classList.toggle('appear', window.scrollY > window.innerHeight);
+        });
+        document.getElementById('upButton').addEventListener('click', () =>
+          window.scrollTo({top: 0, behavior: 'smooth'}));
         </script>
 
         <footer class="footer" id="999">
