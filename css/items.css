@@ -1,8 +1,3 @@
-/* ==========================================
-   Evolution of Writing · “Codex Pages” sheet
-   Replaces the old grid-based items.css
-   ========================================== */
-
 /* ---------- Page-level look (inherits fonts & colors from common.css) ---------- */
 body {
   background: var(--colorBackground);           /* defined in common.css */
