@@ -173,9 +173,14 @@ h1, h2, h3, h4, h5, h6,
 /* optional—keep button size tidy */
 #buttons .btn{ width: 160px; }
 
-/* phones: let buttons wrap two-per-row */
-@media (max-width: 576px){
-  #buttons{ grid-template-columns: repeat(2, 1fr); }
+/* phones in portrait (~ ≤ 420 px) – stack buttons vertically */
+@media (max-width:420px){
+  #buttons{
+    grid-template-columns: 1fr;   /* a single column  */
+    max-width: 90vw;              /* never spill past the viewport */
+  }
+  #buttons .btn{ width:100%; }    /* full-width hit-area */
+  #buttons h3{ font-size:1.15rem; }/* shrink EXPLORE label so it fits */
 }
 
 
@@ -313,3 +318,15 @@ footer.footer a:hover { color: var(--color5); }
   padding:0;
 }
 #infoBox ul:last-child{ margin-bottom:0; }  /* makes bottom line sit flush */
+
+@media (max-width:768px){
+  #about{ padding-left:4%; padding-right:4%; }
+  #find-us{
+    grid-template-columns: 1fr;   /* map first, info second */
+    row-gap: 1.25rem;             /* keep some breathing space */
+  }
+  #museumMap{
+    height: 260px;                /* taller on small screens  */
+  }
+  #infoBox{ height:auto; }        /* let the text flow naturally */
+}

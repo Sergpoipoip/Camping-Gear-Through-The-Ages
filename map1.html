@@ -52,6 +52,18 @@
     color:#dd3c34;                      /* slightly darker crimson */
     text-decoration:underline;
   }
+
+  /* ----------  phones & small tablets  --------------------------- */
+  @media (max-width: 768px){        /* you can tighten to 600px if preferred */
+    main{
+      grid-template-columns: 1fr;   /* stack columns → map then list        */
+      row-gap: 1.5rem;              /* space between the two blocks         */
+    }
+
+    /* optional – nicer flow once stacked */
+    #layoutBox{ justify-content:center; }   /* keep plan centred */
+    #listBox  { margin-top: .5rem; }        /* small breathing space */
+  }
   </style>
 </head>
 <body>
