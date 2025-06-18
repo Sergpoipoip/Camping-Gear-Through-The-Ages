@@ -5,11 +5,14 @@ const tlContainer = document.getElementById('timeline');
 
     /* ——— helpers ——— */
     tlContainer.addEventListener('wheel', e => {
-      if (e.deltaY !== 0) {
-        tlContainer.scrollLeft += e.deltaY;
-        e.preventDefault();
-      }
-    }, { passive: false });
+      // horizontal gesture? let the browser deal with it
+      if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) return;
+
+      // vertical gesture → horizontal scroll
+      const step = e.deltaY * 1.5;            // 1.5 –-2× feels natural
+      tlContainer.scrollBy({ left: step, behavior: 'auto' });
+      e.preventDefault();
+    }, { passive:false });
 
     const step = () => tlContainer.clientWidth * 0.8;
     nextArrow.addEventListener('click', () => tlContainer.scrollBy({ left:  step(), behavior: 'smooth' }));

@@ -18,55 +18,44 @@
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/items.css">
 </head>
-<body>
 
-<!-- Navbar -->
+<body>
+<!-- ▸▸ NAVBAR -------------------------------------------------------------- -->
 <nav class="navbar navbar-expand-md navbar-light">
   <div class="container">
     <div id="projectTitle" class="d-flex align-items-center gap-2">
       <img id="logo" src="imgs/favicon-32x32.png" alt="Logo" width="32" height="32">
-      <a class="navbar-brand fw-semibold" href="index.html">
-        <span id="highlight">Evolution</span> of Writing
-      </a>
+      <a class="navbar-brand fw-semibold" href="index.html">Evolution of Writing</a>
     </div>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            data-bs-target="#navbarMenu" aria-controls="navbarMenu"
             aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse navbar-menu" id="navbarSupportedContent">
+    <!-- Nav Links -->
+    <div id="navbarMenu" class="collapse navbar-collapse">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="narratives.html">Narratives</a></li>
         <li class="nav-item"><a class="nav-link active" aria-current="page" href="items.html">Items</a></li>
         <li class="nav-item"><a class="nav-link" href="timeline.html">Timeline</a></li>
         <li class="nav-item dropdown">
-          <a  class="nav-link dropdown-toggle" href="#" id="navbarMapDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Map
-          </a>
-        <ul class="dropdown-menu" aria-labelledby="navbarMapDropdown">
-          <li>
-            <a class="dropdown-item" href="map.html">
-              Geographical map
-            </a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="map1.html">
-              Exhibition layout
-            </a>
-          </li>
-        </ul>
+          <a  class="nav-link dropdown-toggle" href="#" id="navbarMapDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Map</a>
+          <ul class="dropdown-menu" aria-labelledby="navbarMapDropdown">
+            <li><a class="dropdown-item" href="map.html">Geographical map</a></li>
+            <li><a class="dropdown-item" href="map1.html">Exhibition layout</a></li>
+          </ul>
         </li>
         <li class="nav-item"><a class="nav-link" href="about.html">About me</a></li>
       </ul>
     </div>
   </div>
 </nav>
-<!-- /Navbar -->
+<!-- ▸▸ /NAVBAR ------------------------------------------------------------- -->
 
 <main class="container py-4">
-  <h1 class="mb-4 text-center">Collection Items</h1>
+  <header class="text-center mb-5"><h1 class="fw-bold">Collection Items</h1></header>
 
   <!-- Filters -->
   <div class="row g-3 mb-5">
@@ -134,7 +123,7 @@
 </div>
 
 <!-- FOOTER -->
-<footer class="footer" id="999">
+<footer class="footer">
 <!-- Copyright -->
 <p>&#169; 2025 Copyright: <a href="#">The Evolution of Writing</a></p>
 <p><i>This is the final project for the course <a href="https://www.unibo.it/it/studiare/dottorati-master-specializzazioni-e-altra-formazione/insegnamenti/insegnamento/2023/454464" target="_blank">Information Modelling and Web Technologies</a>, taught by Professor Fabio Vitali at the University of Bologna during the 2023/2024 academic year, as part of the Master's program in <a href="https://corsi.unibo.it/2cycle/DigitalHumanitiesKnowledge" target="_blank">Digital Humanities and Digital Knowledge</a>.</i></p>

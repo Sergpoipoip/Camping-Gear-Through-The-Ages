@@ -173,8 +173,13 @@ h1, h2, h3, h4, h5, h6,
 /* optional—keep button size tidy */
 #buttons .btn{ width: 160px; }
 
-/* phones in portrait (~ ≤ 420 px) – stack buttons vertically */
-@media (max-width:420px){
+/* phones: let buttons wrap two-per-row */
+@media (max-width: 720px){
+  #buttons{ grid-template-columns: repeat(2, 1fr); }
+}
+
+/* phones in portrait (~ ≤ 460 px) – stack buttons vertically */
+@media (max-width:460px){
   #buttons{
     grid-template-columns: 1fr;   /* a single column  */
     max-width: 90vw;              /* never spill past the viewport */
@@ -319,7 +324,7 @@ footer.footer a:hover { color: var(--color5); }
 }
 #infoBox ul:last-child{ margin-bottom:0; }  /* makes bottom line sit flush */
 
-@media (max-width:768px){
+@media (max-width:1105px){
   #about{ padding-left:4%; padding-right:4%; }
   #find-us{
     grid-template-columns: 1fr;   /* map first, info second */

@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" href="imgs/favicon-32x32.png">
     <title>Evolution of Writing</title>
+    <link rel="icon" type="image/png" href="imgs/favicon-32x32.png">
 
     <!-- Google CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Crimson+Text&display=swap" rel="stylesheet">
@@ -21,200 +21,167 @@
 </head>
 
 <body>
-    <div id="box">
-        <div id="opaque-page"></div>
-        <input id="upButton" type="image" src="imgs/upButton.svg" alt="back to the top"/>
-        <div id="first-page">
-            <!-- Navbar -->
-            <nav class="navbar navbar-expand-md navbar-light">
-                <div class="container">
-                  <!-- Animated Logo & Title -->
-                  <div id="projectTitle">
-                    <img id="logo" src="imgs/favicon-32x32.png" />
-                    <a class="navbar-brand" href="index.html">
-                      <span id="highlight">Evolution</span> of Writing
-                    </a>
-                  </div>
-                  
-                  <!-- Hamburger Menu (for mobile) -->
-                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
-                          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
-                          aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-              
-                  <!-- Nav Links -->
-                  <div class="collapse navbar-collapse navbar-menu" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto">
-                      <li class="nav-item">
-                        <a class="nav-link" href="narratives.html">Narratives</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="items.html">Items</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="timeline.html">Timeline</a>
-                      </li>
-                      <li class="nav-item dropdown">
-                        <a  class="nav-link dropdown-toggle" href="#" id="navbarMapDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Map
-                        </a>
-                      <ul class="dropdown-menu" aria-labelledby="navbarMapDropdown">
-                        <li>
-                          <a class="dropdown-item" href="map.html">
-                            Geographical map
-                          </a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="map1.html">
-                            Exhibition layout
-                          </a>
-                        </li>
-                      </ul>
-                      </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="about.html">About me</a>
-                    </li>
-                    </ul>
-                  </div>
-                </div>
-              </nav>
-            <!----- Navbar End -------->
-            <div id="welcome">
-                <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-indicators">
-                      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-                        aria-current="true" aria-label="Slide 1"></button>
-                      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                        aria-label="Slide 2"></button>
-                      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                        aria-label="Slide 3"></button>
-                    </div>
-                    <div class="carousel-inner">
-                      <div class="carousel-item active"
-                        style="background-image: url('https://images.unsplash.com/photo-1692986172397-ef662fba9152?auto=format%2Ccompress&fm=webp&fit=crop&crop=faces%2Cedges&w=1200&h=675&q=60&cs=tinysrgb')">
-                      </div>
-                      <div class="carousel-item"
-                        style="background-image: url('https://collectionapi.metmuseum.org/api/collection/v1/iiif/545445/1467014/main-image')">
-                      </div>
-                      <div class="carousel-item"
-                        style="background-image: url('https://smarthistory.org/wp-content/uploads/2022/07/E124069-2.jpeg')">
-                      </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                    </button>
-                  </div>
-            </div>
-        </div>
-        <div id="about">
-            <div id="description">
-                <div id="texts">
-                    <div id="part-1">
-                        <h2>The Project</h2>
-                        <p>Welcome to <b><i>The Evolution of Writing</i></b>, a project that tells the history of writing through several items related to key stages in the development of writing.</p>
-                        <p>On this website you can explore evolution of human communication through 16 iconic artefacts — from ancient Mesopotamian cuneiform to the unicode standard. This interactive exhibition traces how writing shaped civilizations, featuring rare manuscripts, the Gutenberg Bible, and the first computer code. Discover stories of scribes, inventors, and rebels who transformed how we record thought.</p>
-                    </div>
-                    <div id="part-2">
-                        <h2>Disclaimer</h2>
-                        <p>The purpose of this web site is to explore various types of typographic and layout style for text documents, as an end-of-course project for the "Information Modeling and Web technologies" course of the Master Degree in Digital Humanities and Digital Knowledge of the University of Bologna, under prof. Fabio Vitali.</p>
-                        <p>All copyrights and related rights on the content remain with their original owners. All copyright on the typographic and layout choices are 2025 © The Evolution of Writing.</p>
-                    </div>
-                    <div id="part-3">
-                        <h2>Discover the exhibition</h2>
-                        <p>The exposition traces humanity’s 20 000-year quest to capture thought in lasting marks. The exhibition gathers 16 pivotal artefacts — from Paleolithic tally bones and Sumerian cuneiform tablets, through codices and the first printed books, to the typewriter and character codebook. Each object represents a breakthrough in medium (stone, parchment, paper) or method (pictograph, alphabet, movable type, digital code), letting visitors see — and touch — the technological, social, and artistic leaps that shaped how we record knowledge. Together the pieces reveal writing’s evolution as a continuous conversation between ideas, materials, and the human urge to communicate across time.</p>
-                        </br>
-                    </div>
-                </div>
-                <div id="buttons">
-                    <h3>EXPLORE:</h3>
-                    <button type="button" class="btn" onclick="location.href='items.html'">
-                        <span>ITEMS</span>
-                    </button>
-                    <button type="button" class="btn" onclick="location.href='narratives.html'">
-                        <span>NARRATIVES</span>
-                    </button>
-                    <button type="button" class="btn" onclick="location.href='timeline.html'">
-                        <span>TIMELINE</span>
-                    </button>
-                    <button type="button" class="btn" onclick="location.href='map.html'">
-                        <span>MAP</span>
-                    </button>
-                </div>
-            </div>
-            <section id="find-us" class="my-5">
-              <h2 class="section-title mb-4">Find Us</h2>
-
-              <div id="museumMap"></div>
-              <div id="infoBox">
-                  <h5 class="fw-semibold mb-2">Address</h5>
-                  <p class="mb-3">
-                    Via dell'Archiginnasio 2<br>
-                    40124 Bologna (BO), Italy
-                  </p>
-
-                  <h5 class="fw-semibold mb-2">Opening Hours</h5>
-                  <ul class="list-unstyled mb-3">
-                    <li>Tue – Sun&nbsp;&nbsp;10:00 – 18:00</li>
-                    <li>Closed on Mondays</li>
-                  </ul>
-
-                  <h5 class="fw-semibold mb-2">Ticket Prices</h5>
-                  <ul class="list-unstyled">
-                    <li>Adults&nbsp;&nbsp;€ 8</li>
-                    <li>Students / 65+ &nbsp;€ 4</li>
-                    <li>Under 6&nbsp;&nbsp;Free</li>
-                  </ul>
-              </div>
-            </section>
-        </div>
-
-        <!-- ▸▸  FIND US  ▸▸────────────────────────────────────── -->
-        
-
-        <!-- Leaflet (already used on map.html) -->
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-              integrity="sha256-.../sha512-..." crossorigin=""/>
-        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-                integrity="sha256-.../sha512-..." crossorigin="" defer></script>
-
-        <script defer>
-        document.addEventListener('DOMContentLoaded', () => {
-          const map = L.map('museumMap', { scrollWheelZoom:false })
-                      .setView([44.4920, 11.3438], 16);      // Archiginnasio coords
-          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution:'&copy; OpenStreetMap contributors'
-          }).addTo(map);
-
-          L.marker([44.4920, 11.3438]).addTo(map)
-          .bindPopup('<b>Archaelogical Museum</b><br>Via dell\'Archiginnasio 2').openPopup();
-        });
-
-        document.addEventListener('scroll', () => {
-          const btn = document.getElementById('upButton');
-          btn.classList.toggle('appear', window.scrollY > window.innerHeight);
-        });
-        document.getElementById('upButton').addEventListener('click', () =>
-          window.scrollTo({top: 0, behavior: 'smooth'}));
-        </script>
-
-        <footer class="footer" id="999">
-            <!-- Copyright -->
-            <p>&#169; 2025 Copyright: <a href="#">The Evolution of Writing</a></p>
-            <p><i>This is the final project for the course <a href="https://www.unibo.it/it/studiare/dottorati-master-specializzazioni-e-altra-formazione/insegnamenti/insegnamento/2023/454464" target="_blank">Information Modelling and Web Technologies</a>, taught by Professor Fabio Vitali at the University of Bologna during the 2023/2024 academic year, as part of the Master's program in <a href="https://corsi.unibo.it/2cycle/DigitalHumanitiesKnowledge" target="_blank">Digital Humanities and Digital Knowledge</a>.</i></p>
-            <p><a href="documentation.html" target="_blank">The full documentation of the project</a>.</p>
-            <small>Powered by Bootstrap</small>
-            <div class="footer-icon">
-                <a href="https://github.com/Sergpoipoip/From-Clay-Tablet-To-Screen" target="_blank" title="GitHub">
-                    <img src="imgs/git.svg" alt="GitHub Icon">
-                </a>
-            </div>        
-        </footer>
+<input id="upButton" type="image" src="imgs/upButton.svg" alt="back to the top"/>
+          
+<!-- Navbar -->
+<nav class="navbar navbar-expand-md navbar-light">
+  <div class="container">
+    <div id="projectTitle" class="d-flex align-items-center gap-2">
+      <img src="imgs/favicon-32x32.png" width="32" height="32" alt="Logo">
+      <a class="navbar-brand fw-semibold" href="index.html">Evolution of Writing</a>
     </div>
+                
+    <!-- Hamburger Menu (for mobile) -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+            data-bs-target="#navbarMenu" aria-controls="navbarMenu" 
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+            
+    <!-- Nav Links -->
+    <div id="navbarMenu" class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="narratives.html">Narratives</a></li>
+        <li class="nav-item"><a class="nav-link" href="items.html">Items</a></li>
+        <li class="nav-item"><a class="nav-link" href="timeline.html">Timeline</a></li>
+        <li class="nav-item dropdown">
+          <a  class="nav-link dropdown-toggle" href="#" id="navbarMapDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Map</a>
+          <ul class="dropdown-menu" aria-labelledby="navbarMapDropdown">
+            <li><a class="dropdown-item" href="map.html">Geographical map</a></li>
+            <li><a class="dropdown-item" href="map1.html">Exhibition layout</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About me</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- ▸▸ /NAVBAR ------------------------------------------------------------- -->
+
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+      aria-current="true" aria-label="Slide 1">
+    </button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+      aria-label="Slide 2">
+    </button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+      aria-label="Slide 3">
+    </button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active"
+      style="background-image: url('https://images.unsplash.com/photo-1692986172397-ef662fba9152?auto=format%2Ccompress&fm=webp&fit=crop&crop=faces%2Cedges&w=1200&h=675&q=60&cs=tinysrgb')">
+    </div>
+    <div class="carousel-item"
+      style="background-image: url('https://collectionapi.metmuseum.org/api/collection/v1/iiif/545445/1467014/main-image')">
+    </div>
+    <div class="carousel-item"
+      style="background-image: url('https://smarthistory.org/wp-content/uploads/2022/07/E124069-2.jpeg')">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<div id="about">
+  <div id="description">
+    <div id="texts">
+      <div id="part-1">
+        <h2>The Project</h2>
+        <p>Welcome to <b><i>The Evolution of Writing</i></b>, a project that tells the history of writing through several items related to key stages in the development of writing.</p>
+        <p>On this website you can explore evolution of human communication through 16 iconic artefacts — from ancient Mesopotamian cuneiform to the unicode standard. This interactive exhibition traces how writing shaped civilizations, featuring rare manuscripts, the Gutenberg Bible, and the first computer code. Discover stories of scribes, inventors, and rebels who transformed how we record thought.</p>
+      </div>
+      <div id="part-2">
+        <h2>Disclaimer</h2>
+        <p>The purpose of this web site is to explore various types of typographic and layout style for text documents, as an end-of-course project for the "Information Modeling and Web technologies" course of the Master Degree in Digital Humanities and Digital Knowledge of the University of Bologna, under prof. Fabio Vitali.</p>
+        <p>All copyrights and related rights on the content remain with their original owners. All copyright on the typographic and layout choices are 2025 © The Evolution of Writing.</p>
+      </div>
+      <div id="part-3">
+        <h2>Discover the exhibition</h2>
+        <p>The exposition traces humanity’s 20 000-year quest to capture thought in lasting marks. The exhibition gathers 16 pivotal artefacts — from Paleolithic tally bones and Sumerian cuneiform tablets, through codices and the first printed books, to the typewriter and character codebook. Each object represents a breakthrough in medium (stone, parchment, paper) or method (pictograph, alphabet, movable type, digital code), letting visitors see — and touch — the technological, social, and artistic leaps that shaped how we record knowledge. Together the pieces reveal writing’s evolution as a continuous conversation between ideas, materials, and the human urge to communicate across time.</p>
+        </br>
+      </div>
+    </div>
+    <div id="buttons">
+      <h3>EXPLORE:</h3>
+      <button type="button" class="btn" onclick="location.href='items.html'"><span>ITEMS</span></button>
+      <button type="button" class="btn" onclick="location.href='narratives.html'"><span>NARRATIVES</span></button>
+      <button type="button" class="btn" onclick="location.href='timeline.html'"><span>TIMELINE</span></button>
+      <button type="button" class="btn" onclick="location.href='map.html'"><span>MAP</span></button>
+    </div>
+  </div>
+
+  <!-- ▸▸  FIND US  ▸▸────────────────────────────────────── -->
+  <section id="find-us" class="my-5">
+    <h2 class="section-title mb-4">Find Us</h2>
+
+    <div id="museumMap"></div>
+      <div id="infoBox">
+        <h5 class="fw-semibold mb-2">Address</h5>
+        <p class="mb-3">Via dell'Archiginnasio 2<br>40124 Bologna (BO), Italy</p>
+
+        <h5 class="fw-semibold mb-2">Opening Hours</h5>
+        <ul class="list-unstyled mb-3">
+          <li>Tue – Sun&nbsp;&nbsp;10:00 – 18:00</li>
+          <li>Closed on Mondays</li>
+        </ul>
+
+        <h5 class="fw-semibold mb-2">Ticket Prices</h5>
+        <ul class="list-unstyled">
+          <li>Adults&nbsp;&nbsp;€ 8</li>
+          <li>Students / 65+ &nbsp;€ 4</li>
+          <li>Under 6&nbsp;&nbsp;Free</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <!-- Leaflet (already used on map.html) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-.../sha512-..." crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-.../sha512-..." crossorigin="" defer></script>
+
+  <script defer>
+  document.addEventListener('DOMContentLoaded', () => {
+    const map = L.map('museumMap', { scrollWheelZoom:false })
+                .setView([44.4920, 11.3438], 16);      // Archiginnasio coords
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution:'&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    L.marker([44.4920, 11.3438]).addTo(map)
+    .bindPopup('<b>Archaelogical Museum</b><br>Via dell\'Archiginnasio 2').openPopup();
+  });
+
+  document.addEventListener('scroll', () => {
+    const btn = document.getElementById('upButton');
+    btn.classList.toggle('appear', window.scrollY > window.innerHeight);
+  });
+  document.getElementById('upButton').addEventListener('click', () =>
+    window.scrollTo({top: 0, behavior: 'smooth'}));
+  </script>
+
+  <footer class="footer">
+      <!-- Copyright -->
+      <p>&#169; 2025 Copyright: <a href="#">The Evolution of Writing</a></p>
+      <p><i>This is the final project for the course <a href="https://www.unibo.it/it/studiare/dottorati-master-specializzazioni-e-altra-formazione/insegnamenti/insegnamento/2023/454464" target="_blank">Information Modelling and Web Technologies</a>, taught by Professor Fabio Vitali at the University of Bologna during the 2023/2024 academic year, as part of the Master's program in <a href="https://corsi.unibo.it/2cycle/DigitalHumanitiesKnowledge" target="_blank">Digital Humanities and Digital Knowledge</a>.</i></p>
+      <p><a href="documentation.html" target="_blank">The full documentation of the project</a>.</p>
+      <small>Powered by Bootstrap</small>
+      <div class="footer-icon">
+          <a href="https://github.com/Sergpoipoip/From-Clay-Tablet-To-Screen" target="_blank" title="GitHub">
+              <img src="imgs/git.svg" alt="GitHub Icon">
+          </a>
+      </div>        
+  </footer>
+</div>
 </body>
 </html>

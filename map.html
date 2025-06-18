@@ -36,101 +36,92 @@
 </head>
 <body>
 
-  <!-- Navbar (same as items.html) -->
-  <nav class="navbar navbar-expand-md navbar-light border-bottom">
-    <div class="container">
-      <div id="projectTitle" class="d-flex align-items-center gap-2">
-        <img src="imgs/favicon-32x32.png" width="32" height="32" alt="">
-        <a class="navbar-brand fw-semibold" href="index.html">
-          <span id="highlight">Evolution</span> of Writing
-        </a>
-      </div>
-      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navMenu">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="narratives.html">Narratives</a></li>
-          <li class="nav-item"><a class="nav-link" href="items.html">Items</a></li>
-          <li class="nav-item"><a class="nav-link" href="timeline.html">Timeline</a></li>
-          <li class="nav-item dropdown">
-            <a  class="nav-link dropdown-toggle" href="#" id="navbarMapDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Map
-            </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarMapDropdown">
-            <li>
-              <a class="dropdown-item" href="map.html">
-                Geographical map
-              </a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="map1.html">
-                Exhibition layout
-              </a>
-            </li>
-          </ul>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About me</a></li>
-        </ul>
-      </div>
+<!-- ▸▸ NAVBAR -------------------------------------------------------------- -->
+<nav class="navbar navbar-expand-md navbar-light">
+  <div class="container">
+    <div id="projectTitle" class="d-flex align-items-center gap-2">
+      <img src="imgs/favicon-32x32.png" width="32" height="32" alt="Logo">
+      <a class="navbar-brand fw-semibold" href="index.html">Evolution of Writing</a>
     </div>
-  </nav>
 
-  <!-- Two-column body: map | sidebar -->
-  <div class="page-body">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarMenu" aria-controls="navbarMenu"
+          aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <!-- MAP -->
-    <div id="map" class="shadow-sm"></div>
-
-    <!-- SIDEBAR with filters -->
-    <aside id="map-info" class="border-top border-lg-start p-4">
-      <h3>Artefact journeys</h3>
-      <p class="small">
-        Orange markers — original discovery sites; blue — current museums.
-      </p>
-      <hr>
-
-      <!-- Filters (ids match items.js) -->
-      <div class="mb-3">
-        <label for="filterTheme" class="form-label fw-semibold">Theme</label>
-        <select id="filterTheme" class="form-select">
-          <option value="">All</option>
-        </select>
-      </div>
-      <div class="mb-3">
-        <label for="filterTypology" class="form-label fw-semibold">Typology</label>
-        <select id="filterTypology" class="form-select">
-          <option value="">All</option>
-        </select>
-      </div>
-      <div class="mb-3">
-        <label for="filterPeriod" class="form-label fw-semibold">Period</label>
-        <select id="filterPeriod" class="form-select">
-          <option value="">All</option>
-        </select>
-      </div>
-      <button id="filterReset" class="btn btn-outline-secondary btn-sm w-100">
-        Reset filters
-      </button>
-    </aside>
-
+    <div id="navbarMenu" class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="narratives.html">Narratives</a></li>
+        <li class="nav-item"><a class="nav-link" href="items.html">Items</a></li>
+        <li class="nav-item"><a class="nav-link" href="timeline.html">Timeline</a></li>
+        <li class="nav-item dropdown">
+          <a  class="nav-link dropdown-toggle" href="#" id="navbarMapDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Map</a>
+          <ul class="dropdown-menu" aria-labelledby="navbarMapDropdown">
+            <li><a class="dropdown-item" href="map.html">Geographical map</a></li>
+            <li><a class="dropdown-item" href="map1.html">Exhibition layout</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About me</a></li>
+      </ul>
+    </div>
   </div>
+</nav>
+<!-- ▸▸ /NAVBAR ------------------------------------------------------------- -->
 
-  <!-- FOOTER -->
-  <footer class="footer" id="999">
-  <!-- Copyright -->
-  <p>&#169; 2025 Copyright: <a href="#">The Evolution of Writing</a></p>
-  <p><i>This is the final project for the course <a href="https://www.unibo.it/it/studiare/dottorati-master-specializzazioni-e-altra-formazione/insegnamenti/insegnamento/2023/454464" target="_blank">Information Modelling and Web Technologies</a>, taught by Professor Fabio Vitali at the University of Bologna during the 2023/2024 academic year, as part of the Master's program in <a href="https://corsi.unibo.it/2cycle/DigitalHumanitiesKnowledge" target="_blank">Digital Humanities and Digital Knowledge</a>.</i></p>
-  <p><a href="documentation.html" target="_blank">The full documentation of the project</a>.</p>
-  <small>Powered by Bootstrap</small>
-  <div class="footer-icon">
-      <a href="https://github.com/Sergpoipoip/From-Clay-Tablet-To-Screen" target="_blank" title="GitHub">
-          <img src="imgs/git.svg" alt="GitHub Icon">
-      </a>
-  </div>        
-  </footer>
+<!-- Two-column body: map | sidebar -->
+<div class="page-body">
+  <!-- MAP -->
+  <div id="map" class="shadow-sm"></div>
 
-  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script defer src="js/map.js"></script>
+  <!-- SIDEBAR with filters -->
+  <aside id="map-info" class="border-top border-lg-start p-4">
+    <h3>Artefact journeys</h3>
+    <p class="small">
+      Orange markers — original discovery sites; blue — current museums.
+    </p>
+    <hr>
+
+    <!-- Filters (ids match items.js) -->
+    <div class="mb-3">
+      <label for="filterTheme" class="form-label fw-semibold">Theme</label>
+      <select id="filterTheme" class="form-select">
+        <option value="">All</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="filterTypology" class="form-label fw-semibold">Typology</label>
+      <select id="filterTypology" class="form-select">
+        <option value="">All</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="filterPeriod" class="form-label fw-semibold">Period</label>
+      <select id="filterPeriod" class="form-select">
+        <option value="">All</option>
+      </select>
+    </div>
+    <button id="filterReset" class="btn btn-outline-secondary btn-sm w-100">
+      Reset filters
+    </button>
+  </aside>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+<!-- Copyright -->
+<p>&#169; 2025 Copyright: <a href="#">The Evolution of Writing</a></p>
+<p><i>This is the final project for the course <a href="https://www.unibo.it/it/studiare/dottorati-master-specializzazioni-e-altra-formazione/insegnamenti/insegnamento/2023/454464" target="_blank">Information Modelling and Web Technologies</a>, taught by Professor Fabio Vitali at the University of Bologna during the 2023/2024 academic year, as part of the Master's program in <a href="https://corsi.unibo.it/2cycle/DigitalHumanitiesKnowledge" target="_blank">Digital Humanities and Digital Knowledge</a>.</i></p>
+<p><a href="documentation.html" target="_blank">The full documentation of the project</a>.</p>
+<small>Powered by Bootstrap</small>
+<div class="footer-icon">
+    <a href="https://github.com/Sergpoipoip/From-Clay-Tablet-To-Screen" target="_blank" title="GitHub">
+        <img src="imgs/git.svg" alt="GitHub Icon">
+    </a>
+</div>        
+</footer>
+
+<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script defer src="js/map.js"></script>
 </body>
 </html>

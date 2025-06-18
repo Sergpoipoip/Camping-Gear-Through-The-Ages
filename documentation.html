@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Project Documentation – The Evolution of Writing</title>
+  <link rel="icon" type="image/png" href="imgs/favicon-32x32.png">
   <link rel="stylesheet" href="css/common.css" />
   <link rel="stylesheet" href="css/documentation.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet" />
@@ -54,7 +55,7 @@
       <a href="#tech-imp">&nbsp;&nbsp;3.3 Technical Implementation</a>
       <a href="#use-cases">4. Use Cases</a>
       <a href="#design">5. Design Specifications</a>
-      <a href="#layout">&nbsp;&nbsp;5.1 Visual Design</a>
+      <a href="#layout">&nbsp;&nbsp;5.1 Layout</a>
       <a href="#color">&nbsp;&nbsp;5.2 Colour Palette</a>
       <a href="#typography">&nbsp;&nbsp;5.3 Typography</a>
       <a href="#references">6. References</a>
@@ -74,7 +75,7 @@
 
       <h3 id="overview">1.1&nbsp;Overview</h3>
       <p>The site is designed to provide the visitor with a coherent and flexible exploration of the history of writing, whether their motivation is curiosity, research, or pedagogy. The website is organised around three complementary access paths — <strong>Historical Themes</strong>, <strong>Object Types</strong> and <strong>Periods</strong>. Each path reshuffles the same data set, encouraging users to look at the artefacts through different interpretive lenses.</p>
-      <p>The entirety of the exhibition content is managed in a structured JSON format, with all metadata, descriptive texts, and references defined and versioned for stability and maintainability. Thisrchitecture underpins the flexibi ality of the user experience and supports future extension or integration with other digital humanities initiatives.</p>
+      <p>The entirety of the exhibition content is managed in a structured JSON format, with all metadata, descriptive texts, and references defined and versioned for stability and maintainability. This architecture underpins the flexibility of the user experience and supports future extension or integration with other digital humanities initiatives.</p>
 
       <h3 id="objectives">1.2&nbsp;Objectives</h3>
       <ul>
@@ -136,14 +137,14 @@
     <section id="development">
       <h2>3. Development</h2>
 
-      <h3>3.1&nbsp;Information Architecture</h3>
+      <h3 id="ia">3.1&nbsp;Information Architecture</h3>
       <p>Information on the site is organised according to the principle of a <strong>single authoritative data source</strong>. The file <code>items.json</code> resides at the project root and is fetched independently by each core view — the item gallery, the timeline, and the two maps — when that view is first loaded. On every request the raw JSON is parsed into plain JavaScript objects whose scope is limited to the page that triggered the fetch.</p>
       <p>Inside the file, all records are gathered under the top‑level key <code>items</code>, itself an array. Each array element is one artefact and follows a predictable internal grammar. A numeric <code>@sort</code> field determines chronological ordering across the site; <code>shortName</code> supplies card headings; <code>image</code> stores the path to the default image of an artefact; <code>periodTag</code> maps directly to the period filter. The nested <code>info</code> object holds authoritative catalogue metadata such as <em>Object type</em>, <em>Materials</em>, <em>Housed in</em> and others.</p>
       <p>Interpretive texts are separated by granularity. <code>shortInfo</code> is a tweet‑length hook displayed on gallery cards; <code>longerInfo</code> is an array that can hold multiple paragraphs for modal pop‑ups; <code>fullInfo</code> is a path to an external HTML essay which is lazy‑loaded only when the user explicitly asks for the full story. This lazy approach keeps the initial payload light, while still offering limitless depth.</p>
       The same JSON powers the timeline through the <code>@sort</code> field and feeds the Leaflet maps via geocoded location fields generated during the build process.</p>
 
       <h3 id="navigation">3.2&nbsp;User Experience (UX)</h3>
-      <p>The site’s navigation is built around the principle of letting visitors approach the exhibition from multiple angles. At its centre stands the Items page, which houses every object’s catalogue entry. Here each artefact appears with a data table, an image, and a description that the visitor can expand or collapse at will; quick-jump buttons toggle among narratives, while filter controls beneath the main menu allow combinations of themes, periods, and types.</p>
+      <p>The site’s navigation is built around the principle of letting visitors approach the exhibition from multiple angles. At its centre stands the <strong>Items page</strong>, which houses every object’s catalogue entry. Here each artefact appears with a data table, an image, and a description that the visitor can expand or collapse at will; quick-jump buttons toggle among narratives, while filter controls beneath the main menu allow combinations of themes, periods, and types.</p>
       <p>Branching out from this hub are four specialised views. The <strong>Narratives page</strong> offers concise explanations of each storyline and invites users to start exploring by simply selecting the strand that interests them. The <strong>Timeline</strong> arranges all items chronologically, giving a clear diachronic perspective; by clicking on the artefact image the user gets redirected to the <strong>Items page</strong> where a card with information about this artefact pops up.</p>
       <p>There are also two maps: the <strong>Exhibition</strong> one and <strong>Geographical</strong>. The <strong>Exhibition Map</strong> mirrors the physical gallery layout, providing direct links to the artefacts descriptions. The <strong>Geographical Map</strong> page lets visitors follow each artefact’s real-world journey. When it loads, a Leaflet map centres on the globe and drops two colour-coded markers for every artefact — orange for the place where it was found and blue for the institution that now houses it. Markers are clustered automatically so the view stays clear at low zoom levels, and a popup on each pin links straight to that object’s full record on the <strong>Items page</strong>. A sidebar on the right offers drop-down filters for theme, typology and historical period; changing any filter instantly hides or reveals the corresponding markers, mirroring the logic used on the <strong>Items</strong> grid.</p>
 
@@ -195,13 +196,13 @@
     </section>
 
     <!-- ===== 5. Design Specifications ================================= -->
-    <h3>5.&nbsp;Design&nbsp;Specifications</h3>
+    <h3 id="design">5.&nbsp;Design&nbsp;Specifications</h3>
     <p>The visual language of <strong>Evolution of Writing</strong> is built around the metaphor of a scholar leafing through illuminated manuscripts. Parchment hues,
       ink-dark text, and quiet micro-animations evoke the tactility of historical documents while Bootstrap’s mobile-first grid and Leaflet maps keep
       the experience unapologetically contemporary.</p>
 
     <!-- ­­­­­­­­­­­­ 5.1 · LAYOUT ­­­­­­­­­­­­­ -->
-    <h4>5.1&nbsp;Layout</h4>
+    <h4 id="layout">5.1&nbsp;Layout</h4>
 
     <!-- 5.1.1 – HOMEPAGE -->
     <h5>5.1.1&nbsp;Homepage</h5>
@@ -211,7 +212,7 @@
     the same immersive ratio.</p>
 
     <p>The second fold introduces the <em>Explore</em> grid. A CSS Grid layout renders four equally wide columns on desktop (<code>repeat(4, minmax(120px, 1fr))</code>) but collapses gracefully to two
-      columns below 576 px, maintaining finger-friendly hit areas on phones. Because the grid is fed by JS from <code>items.json</code>, the site can grow
+      columns below 720 px, maintaining finger-friendly hit areas on phones. Because the grid is fed by JS from <code>items.json</code>, the site can grow
       new themes without touching HTML.</p>
 
     <p>The third fold, <em>Find Us</em>, uses a 60 / 40 split (<code>#find-us { grid-template-columns: 3fr 2fr }</code>) to pair a Leaflet map
@@ -243,7 +244,7 @@
     </p>
 
     <!-- ­­­­­­­­­­­­ 5.2 · COLOUR PALETTE ­­­­­­­­­­­­­ -->
-    <h4>5.2&nbsp;Colour&nbsp;Palette</h4>
+    <h4 id="color">5.2&nbsp;Colour&nbsp;Palette</h4>
 
     <p>Colours are declared once in <code>:root</code> so every component, regardless of page, pulls from the same ink-and-parchment scheme. The background tone <code>#f6f1e0</code> was sampled
     from aged vellum and lightened by 4 % to hit a 14.8:1 contrast ratio against the charcoal text <code>#2e2e2e</code>, comfortably surpassing WCAG AA for body
@@ -273,7 +274,7 @@
     </ul>
 
     <!-- ­­­­­­­­­­­­ 5.3 · TYPOGRAPHY ­­­­­­­­­­­­­ -->
-    <h4>5.3&nbsp;Typography</h4>
+    <h4 id="typography">5.3&nbsp;Typography</h4>
 
     <p>Typography delivers half the historical mood. We pair two Google Fonts,
     loaded once in the document head to avoid FOIT flashes.</p>
@@ -346,47 +347,9 @@
     </section>
   </div>
 
-  <div class="menu column-2" id="toc">
-    <button class="hamburger" aria-label="Toggle menu">☰</button>
-    <nav class="menu-body"><!-- dynamic links already exist as below for right‑hand sticky TOC -->
-      <a href="#abstract" class="chapter">Abstract</a>
-      <a href="#introduction" class="chapter">1. Introduction</a>
-      <a href="#overview" class="subchapter">1.1 Overview</a>
-      <a href="#objectives" class="subchapter">1.2 Objectives</a>
-      <a href="#requirements" class="subchapter">1.3 Requirements</a>
-      <a href="#exhibition" class="chapter">2. The Exhibition</a>
-      <a href="#objects" class="subchapter">2.1 Objects</a>
-      <a href="#map" class="subchapter">2.2 Maps</a>
-      <a href="#narratives" class="subchapter">2.3 Narratives</a>
-      <a href="#development" class="chapter">3. Development</a>
-      <a href="#ia" class="subchapter">3.1 IA</a>
-      <a href="#navigation" class="subchapter">3.2 UX</a>
-      <a href="#tech-imp" class="subchapter">3.3 Tech</a>
-      <a href="#use-cases" class="chapter">4. Use Cases</a>
-      <a href="#design" class="chapter">5. Design</a>
-      <a href="#layout" class="subchapter">5.1 Visual</a>
-      <a href="#color" class="subchapter">5.2 Colour</a>
-      <a href="#typography" class="subchapter">5.3 Typography</a>
-      <a href="#references" class="chapter">6. References</a>
-      <a href="#rights" class="chapter">7. Rights</a>
-    </nav>
-  </div>
 </div>
 
 <script>
-window.addEventListener('load',()=>document.body.classList.add('loaded'));
-// right‑hand hamburger TOC
-const hamburger=document.querySelector('.hamburger');
-hamburger.addEventListener('click',()=>document.querySelector('.menu-body').classList.toggle('open'));
-// smooth scroll + highlight for both TOCs
-[...document.querySelectorAll('.toc-top a, .menu-body a')].forEach(link=>{
-  link.addEventListener('click',e=>{
-    e.preventDefault();
-    const target=document.querySelector(link.getAttribute('href'));
-    target.scrollIntoView({behavior:'smooth'});
-  });
-});
-
 document.addEventListener('scroll', () => {
   const btn = document.getElementById('upButton');
   btn.classList.toggle('appear', window.scrollY > window.innerHeight);
@@ -395,7 +358,7 @@ document.getElementById('upButton').addEventListener('click', () =>
   window.scrollTo({top: 0, behavior: 'smooth'}));
 </script>
 
-<footer class="footer" id="999">
+<footer class="footer">
   <!-- Copyright -->
   <p>&#169; 2025 Copyright: <a href="#">The Evolution of Writing</a></p>
   <p><i>This is the final project for the course <a href="https://www.unibo.it/it/studiare/dottorati-master-specializzazioni-e-altra-formazione/insegnamenti/insegnamento/2023/454464" target="_blank">Information Modelling and Web Technologies</a>, taught by Professor Fabio Vitali at the University of Bologna during the 2023/2024 academic year, as part of the Master's program in <a href="https://corsi.unibo.it/2cycle/DigitalHumanitiesKnowledge" target="_blank">Digital Humanities and Digital Knowledge</a>.</i></p>

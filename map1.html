@@ -4,6 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Exhibition Layout · Evolution of Writing</title>
+  <link rel="icon" type="image/png" href="imgs/favicon-32x32.png">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Crimson+Text&display=swap" rel="stylesheet">
 
   <!-- Bootstrap 5 + your common styles -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -68,20 +72,21 @@
 </head>
 <body>
 
-<!-- ######## NAVBAR (short version) ################################ -->
+<!-- ▸▸ NAVBAR -------------------------------------------------------------- -->
 <nav class="navbar navbar-expand-md navbar-light">
   <div class="container">
-    <a class="navbar-brand fw-semibold d-flex align-items-center gap-2" href="index.html">
-      <img src="imgs/favicon-32x32.png" width="32" height="32" alt="">
-      <span><span id="highlight">Evolution</span> of Writing</span>
-    </a>
+    <div id="projectTitle" class="d-flex align-items-center gap-2">
+      <img src="imgs/favicon-32x32.png" width="32" height="32" alt="Logo">
+      <a class="navbar-brand fw-semibold" href="index.html">Evolution of Writing</a>
+    </div>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#nav" aria-controls="nav" aria-expanded="false">
+            data-bs-target="#navbarMenu" aria-controls="navbarMenu"
+            aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div id="nav" class="collapse navbar-collapse">
+    <div id="navbarMenu" class="collapse navbar-collapse">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="narratives.html">Narratives</a></li>
         <li class="nav-item"><a class="nav-link" href="items.html">Items</a></li>
@@ -98,10 +103,9 @@
     </div>
   </div>
 </nav>
-<!-- ################################################################ -->
+<!-- ▸▸ /NAVBAR ------------------------------------------------------------- -->
 
 <main class="container py-4">
-
   <!-- ◀ Map image -->
   <div id="layoutBox">
     <img id="plan" src="imgs/Ex-layout.png" alt="Exhibition hall layout">
@@ -132,18 +136,18 @@
 </main>
 
 <!-- FOOTER -->
-  <footer class="footer" id="999">
-  <!-- Copyright -->
-  <p>&#169; 2025 Copyright: <a href="#">The Evolution of Writing</a></p>
-  <p><i>This is the final project for the course <a href="https://www.unibo.it/it/studiare/dottorati-master-specializzazioni-e-altra-formazione/insegnamenti/insegnamento/2023/454464" target="_blank">Information Modelling and Web Technologies</a>, taught by Professor Fabio Vitali at the University of Bologna during the 2023/2024 academic year, as part of the Master's program in <a href="https://corsi.unibo.it/2cycle/DigitalHumanitiesKnowledge" target="_blank">Digital Humanities and Digital Knowledge</a>.</i></p>
-  <p><a href="documentation.html" target="_blank">The full documentation of the project</a>.</p>
-  <small>Powered by Bootstrap</small>
-  <div class="footer-icon">
-      <a href="https://github.com/Sergpoipoip/From-Clay-Tablet-To-Screen" target="_blank" title="GitHub">
-          <img src="imgs/git.svg" alt="GitHub Icon">
-      </a>
-  </div>        
-  </footer>
+<footer class="footer">
+<!-- Copyright -->
+<p>&#169; 2025 Copyright: <a href="#">The Evolution of Writing</a></p>
+<p><i>This is the final project for the course <a href="https://www.unibo.it/it/studiare/dottorati-master-specializzazioni-e-altra-formazione/insegnamenti/insegnamento/2023/454464" target="_blank">Information Modelling and Web Technologies</a>, taught by Professor Fabio Vitali at the University of Bologna during the 2023/2024 academic year, as part of the Master's program in <a href="https://corsi.unibo.it/2cycle/DigitalHumanitiesKnowledge" target="_blank">Digital Humanities and Digital Knowledge</a>.</i></p>
+<p><a href="documentation.html" target="_blank">The full documentation of the project</a>.</p>
+<small>Powered by Bootstrap</small>
+<div class="footer-icon">
+    <a href="https://github.com/Sergpoipoip/From-Clay-Tablet-To-Screen" target="_blank" title="GitHub">
+        <img src="imgs/git.svg" alt="GitHub Icon">
+    </a>
+</div>        
+</footer>
 
 <!-- Bootstrap bundle -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
